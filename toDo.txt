@@ -1,0 +1,27 @@
+menú editar
+botones
+tabs derecha
+	lexicos
+	sintactico
+	semantico
+	codigo intermedio
+tabs debajo
+	Errores lexicos
+	Errores sintacticos
+	Errores semanticos
+	Tabla de simbolos
+	Salida
+Acomodo componentes
+------------------------
+why &
+lexer
+nombre archivo
+cambiar color barra estado cuando mod
+menu contextual (clic derecho)
+fuentes
+	san francisco
+	menlo
+iconos
+temas
+	tema transparente
+pestañas
