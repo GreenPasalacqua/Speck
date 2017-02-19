@@ -109,6 +109,7 @@
             this.cuadroEditor.Size = new System.Drawing.Size(1285, 655);
             this.cuadroEditor.TabIndex = 0;
             this.cuadroEditor.UpdateUI += new System.EventHandler<ScintillaNET.UpdateUIEventArgs>(this.cuadroEditor_UpdateUI);
+            this.cuadroEditor.TextChanged += new System.EventHandler(this.cuadroEditor_TextChanged);
             // 
             // barraEstado
             // 
@@ -286,30 +287,30 @@
             // léxicoToolStripMenuItem
             // 
             this.léxicoToolStripMenuItem.Name = "léxicoToolStripMenuItem";
-            this.léxicoToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.léxicoToolStripMenuItem.Size = new System.Drawing.Size(227, 38);
             this.léxicoToolStripMenuItem.Text = "Léxico";
             // 
             // sintácticoToolStripMenuItem
             // 
             this.sintácticoToolStripMenuItem.Name = "sintácticoToolStripMenuItem";
-            this.sintácticoToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.sintácticoToolStripMenuItem.Size = new System.Drawing.Size(227, 38);
             this.sintácticoToolStripMenuItem.Text = "Sintáctico";
             // 
             // semánticoToolStripMenuItem
             // 
             this.semánticoToolStripMenuItem.Name = "semánticoToolStripMenuItem";
-            this.semánticoToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.semánticoToolStripMenuItem.Size = new System.Drawing.Size(227, 38);
             this.semánticoToolStripMenuItem.Text = "Semántico";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(266, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(224, 6);
             // 
             // compilarToolStripMenuItem1
             // 
             this.compilarToolStripMenuItem1.Name = "compilarToolStripMenuItem1";
-            this.compilarToolStripMenuItem1.Size = new System.Drawing.Size(269, 38);
+            this.compilarToolStripMenuItem1.Size = new System.Drawing.Size(227, 38);
             this.compilarToolStripMenuItem1.Text = "Compilar";
             // 
             // toolStrip1

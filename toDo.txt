@@ -1,8 +1,8 @@
 hacer funciones
 revisar menú archivo
 revisar código
+----------------------
 menú editar
-----------------
 botones
 tabs derecha
 	lexicos
@@ -23,9 +23,10 @@ nombre archivo
 cambiar color barra estado cuando mod
 menu clic derecho
 atajos de teclado
+acomodar labels status al centro
 fuentes
-	san francisco
-	menlo
+	helvetica neue
+	meslo
 iconos
 temas
 	tema transparente

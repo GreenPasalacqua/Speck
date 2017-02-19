@@ -23,13 +23,16 @@ namespace Speck
         internal StringBuilder SbColumna = new StringBuilder();
         internal StringBuilder SbModificacion = new StringBuilder();
 
+        internal int LongitudMaximaNumeroLinea;
+        internal const int PaddingNumeroLinea = 2;
+
         public Speck()
         {
             InitializeComponent();
 
             //Configurar estilo (Fuente y Tamaño)
             cuadroEditor.StyleResetDefault();
-            cuadroEditor.Styles[Style.Default].Font = "Calibri";
+            cuadroEditor.Styles[Style.Default].Font = "Meslo LG S Regular";
             cuadroEditor.Styles[Style.Default].Size = 10;
             cuadroEditor.StyleClearAll();
 
@@ -48,7 +51,7 @@ namespace Speck
             cuadroEditor.SetKeywords(1, "lol asd qwe");
 
             //Número de linea
-            cuadroEditor.Margins[0].Width = 40;
+            cuadroEditor.Margins[0].Width = 16;
             cuadroEditor.Styles[Style.LineNumber].Font = "Calibri";
             cuadroEditor.Styles[Style.LineNumber].ForeColor = Color.White;
             cuadroEditor.Styles[Style.LineNumber].BackColor = Color.FromArgb(0, 88, 191, 255);
@@ -186,6 +189,18 @@ namespace Speck
                 SbLinea.Clear();
                 SbColumna.Clear();
             }
+        }
+
+        private void cuadroEditor_TextChanged(object sender, EventArgs e)
+        {
+            var longitudMaximaNumeroLinea = cuadroEditor.Lines.Count.ToString().Length;
+            if (longitudMaximaNumeroLinea == LongitudMaximaNumeroLinea)
+                return;
+
+            cuadroEditor.Margins[0].Width =
+                cuadroEditor.TextWidth(Style.LineNumber, new string('9', longitudMaximaNumeroLinea + 1)) +
+                PaddingNumeroLinea;
+            LongitudMaximaNumeroLinea = longitudMaximaNumeroLinea;
         }
     }
 }
