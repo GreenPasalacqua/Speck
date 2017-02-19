@@ -17,7 +17,8 @@ why &
 lexer
 nombre archivo
 cambiar color barra estado cuando mod
-menu contextual (clic derecho)
+menu clic derecho
+atajos de teclado
 fuentes
 	san francisco
 	menlo
