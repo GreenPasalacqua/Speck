@@ -150,7 +150,7 @@ namespace Speck
             GuardarArchivo();
         }
 
-        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (NombreArchivo == null && !cuadroEditor.Text.Equals(string.Empty) ||
                 !cuadroEditor.Text.Equals(SbModificacion.ToString()))

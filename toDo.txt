@@ -1,4 +1,8 @@
+hacer funciones
+revisar menú archivo
+revisar código
 menú editar
+----------------
 botones
 tabs derecha
 	lexicos
