@@ -47,9 +47,6 @@ namespace Speck
             cuadroEditor.SetKeywords(0, "if while do for int float string");
             cuadroEditor.SetKeywords(1, "lol asd qwe");
 
-            //Seleccionar Lexer
-            cuadroEditor.Lexer = Lexer.Cpp;
-
             //Número de linea
             cuadroEditor.Margins[0].Width = 40;
             cuadroEditor.Styles[Style.LineNumber].Font = "Calibri";

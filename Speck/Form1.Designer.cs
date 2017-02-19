@@ -62,9 +62,11 @@
             // 
             // cuadroEditor
             // 
-            this.cuadroEditor.Location = new System.Drawing.Point(36, 72);
+            this.cuadroEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cuadroEditor.Lexer = ScintillaNET.Lexer.Cpp;
+            this.cuadroEditor.Location = new System.Drawing.Point(0, 40);
             this.cuadroEditor.Name = "cuadroEditor";
-            this.cuadroEditor.Size = new System.Drawing.Size(413, 571);
+            this.cuadroEditor.Size = new System.Drawing.Size(1285, 678);
             this.cuadroEditor.TabIndex = 0;
             this.cuadroEditor.UpdateUI += new System.EventHandler<ScintillaNET.UpdateUIEventArgs>(this.cuadroEditor_UpdateUI);
             // 
@@ -250,9 +252,10 @@
             this.barraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.labelLinea,
             this.labelColumna});
-            this.barraEstado.Location = new System.Drawing.Point(0, 734);
+            this.barraEstado.Location = new System.Drawing.Point(0, 718);
             this.barraEstado.Name = "barraEstado";
-            this.barraEstado.Size = new System.Drawing.Size(1285, 22);
+            this.barraEstado.Size = new System.Drawing.Size(1285, 38);
+            this.barraEstado.SizingGrip = false;
             this.barraEstado.TabIndex = 2;
             // 
             // labelLinea
