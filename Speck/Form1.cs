@@ -191,15 +191,6 @@ namespace Speck
             Salir();
         }
 
-        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            deshacerToolStripMenuItem.Enabled = cuadroEditor.CanUndo;
-            rehacerToolStripMenuItem.Enabled = cuadroEditor.CanRedo;
-            cortarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
-            copiarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
-            pegarToolStripMenuItem.Enabled = Clipboard.ContainsData(DataFormats.Text) && cuadroEditor.CanPaste;
-        }
-
         public void Deshacer()
         {
             cuadroEditor.Undo();
@@ -273,6 +264,12 @@ namespace Speck
                 SbLinea.Clear();
                 SbColumna.Clear();
             }
+
+            deshacerToolStripMenuItem.Enabled = cuadroEditor.CanUndo;
+            rehacerToolStripMenuItem.Enabled = cuadroEditor.CanRedo;
+            cortarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
+            copiarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
+            pegarToolStripMenuItem.Enabled = Clipboard.ContainsData(DataFormats.Text) && cuadroEditor.CanPaste;
         }
 
         private void cuadroEditor_TextChanged(object sender, EventArgs e)
