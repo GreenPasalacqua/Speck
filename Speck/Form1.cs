@@ -190,7 +190,7 @@ namespace Speck
         {
             cortarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
             copiarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
-            pegarToolStripMenuItem.Enabled = (Clipboard.ContainsText()  && cuadroEditor.CanPaste);
+            pegarToolStripMenuItem.Enabled = (Clipboard.ContainsData(DataFormats.Text)  && cuadroEditor.CanPaste);
         }
 
         public void Cortar()
