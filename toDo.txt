@@ -1,5 +1,3 @@
-botones
-------------------------
 atajos de teclado
 menu clic derecho
 iconos
@@ -8,4 +6,5 @@ fuentes
 	helvetica neue
 	meslo
 temas
+explorador a un costado
 pestañas

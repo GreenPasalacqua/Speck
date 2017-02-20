@@ -33,11 +33,13 @@ namespace Speck
         public Speck()
         {
             InitializeComponent();
+
             //Full screen, como para juegos
             /*WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;*/
 
-            
+            //Location = new Point(0, 0);
+            //Size = Screen.PrimaryScreen.WorkingArea.Size;
 
             cuadroEditor.StyleResetDefault();
             cuadroEditor.Styles[Style.Default].Font = "Meslo LG S Regular";
@@ -89,7 +91,9 @@ namespace Speck
             RutaArchivo = string.Empty;
             cuadroEditor.Text = string.Empty;
             cuadroEditor.SetSavePoint();
-            Text = Name;
+            SbTitulo.Clear();
+            SbTitulo.Append(Name);
+            Text = SbTitulo.ToString();
             cuadroEditor.EmptyUndoBuffer();
         }
 
@@ -182,7 +186,17 @@ namespace Speck
             NuevoArchivo();
         }
 
+        private void botonNuevo_Click(object sender, EventArgs e)
+        {
+            NuevoArchivo();
+        }
+
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirArchivo();
+        }
+
+        private void botonAbrir_Click(object sender, EventArgs e)
         {
             AbrirArchivo();
         }
@@ -192,7 +206,17 @@ namespace Speck
             GuardarArchivo();
         }
 
+        private void botonGuardar_Click(object sender, EventArgs e)
+        {
+            GuardarArchivo();
+        }
+
         private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GuardarArchivoComo();
+        }
+
+        private void botonGuardarComo_Click(object sender, EventArgs e)
         {
             GuardarArchivoComo();
         }
@@ -237,7 +261,17 @@ namespace Speck
             Deshacer();
         }
 
+        private void botonDeshacer_Click(object sender, EventArgs e)
+        {
+            Deshacer();
+        }
+
         private void rehacerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rehacer();
+        }
+
+        private void botonRehacer_Click(object sender, EventArgs e)
         {
             Rehacer();
         }
@@ -277,7 +311,9 @@ namespace Speck
             }
 
             deshacerToolStripMenuItem.Enabled = cuadroEditor.CanUndo;
+            botonDeshacer.Enabled = cuadroEditor.CanUndo;
             rehacerToolStripMenuItem.Enabled = cuadroEditor.CanRedo;
+            botonRehacer.Enabled = cuadroEditor.CanRedo;
             cortarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
             copiarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
             pegarToolStripMenuItem.Enabled = Clipboard.ContainsData(DataFormats.Text) && cuadroEditor.CanPaste;
@@ -297,14 +333,20 @@ namespace Speck
 
         private void cuadroEditor_SavePointLeft(object sender, EventArgs e)
         {
+            SbTitulo.Clear();
+            SbTitulo.Append(Text).Append(CaracterNoGuardado);
+            Text = SbTitulo.ToString();
             barraEstado.BackColor = Color.FromArgb(barraEstado.BackColor.ToArgb() ^ 0xffffff);
-            Text = Text.Insert(Text.Length, CaracterNoGuardado);
         }
 
         private void cuadroEditor_SavePointReached(object sender, EventArgs e)
         {
-            barraEstado.BackColor = Color.FromArgb(barraEstado.BackColor.ToArgb() ^ 0xffffff);
-            Text = Text.Remove(Text.Length - 1);
+            if(SbTitulo.ToString().Contains(CaracterNoGuardado))
+            {
+                SbTitulo.Length--;
+                Text = SbTitulo.ToString();
+                barraEstado.BackColor = Color.FromArgb(barraEstado.BackColor.ToArgb() ^ 0xffffff);
+            }
         }
     }
 }
