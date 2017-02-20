@@ -301,5 +301,10 @@ namespace Speck
             barraEstado.BackColor = Color.FromArgb(barraEstado.BackColor.ToArgb() ^ 0xffffff);
             Text = Text.Remove(Text.Length - 1);
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
