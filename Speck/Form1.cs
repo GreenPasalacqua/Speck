@@ -38,8 +38,9 @@ namespace Speck
             /*WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;*/
 
-            //Location = new Point(0, 0);
-            //Size = Screen.PrimaryScreen.WorkingArea.Size;
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(0, 0);
+            Size = Screen.PrimaryScreen.WorkingArea.Size;
 
             cuadroEditor.StyleResetDefault();
             cuadroEditor.Styles[Style.Default].Font = "Meslo LG S Regular";
@@ -341,7 +342,7 @@ namespace Speck
 
         private void cuadroEditor_SavePointReached(object sender, EventArgs e)
         {
-            if(SbTitulo.ToString().Contains(CaracterNoGuardado))
+            if (SbTitulo.ToString().Contains(CaracterNoGuardado))
             {
                 SbTitulo.Length--;
                 Text = SbTitulo.ToString();
