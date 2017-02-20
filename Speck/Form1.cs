@@ -35,6 +35,8 @@ namespace Speck
             cuadroEditor.StyleResetDefault();
             cuadroEditor.Styles[Style.Default].Font = "Meslo LG S Regular";
             cuadroEditor.Styles[Style.Default].Size = 10;
+            cuadroEditor.SetSelectionBackColor(true, Color.DodgerBlue);
+            cuadroEditor.SetSelectionForeColor(true, Color.White);
             cuadroEditor.StyleClearAll();
 
             cuadroEditor.Margins[0].Width = 16;
@@ -81,6 +83,7 @@ namespace Speck
             cuadroEditor.Text = string.Empty;
             cuadroEditor.SetSavePoint();
             Text = Name;
+            cuadroEditor.EmptyUndoBuffer();
         }
 
         public void AbrirArchivo()
@@ -114,6 +117,7 @@ namespace Speck
                 cuadroEditor.SetSavePoint();
                 Text = Name + Separador + Path.GetFileNameWithoutExtension(RutaArchivo);
             }
+            cuadroEditor.EmptyUndoBuffer();
         }
 
         public void GuardarArchivo()
@@ -151,6 +155,7 @@ namespace Speck
                 cuadroEditor.SetSavePoint();
                 Text = Name + Separador + Path.GetFileNameWithoutExtension(RutaArchivo);
             }
+            cuadroEditor.EmptyUndoBuffer();
         }
 
         public void Salir()
@@ -188,9 +193,21 @@ namespace Speck
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            deshacerToolStripMenuItem.Enabled = cuadroEditor.CanUndo;
+            rehacerToolStripMenuItem.Enabled = cuadroEditor.CanRedo;
             cortarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
             copiarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
-            pegarToolStripMenuItem.Enabled = (Clipboard.ContainsData(DataFormats.Text)  && cuadroEditor.CanPaste);
+            pegarToolStripMenuItem.Enabled = Clipboard.ContainsData(DataFormats.Text) && cuadroEditor.CanPaste;
+        }
+
+        public void Deshacer()
+        {
+            cuadroEditor.Undo();
+        }
+
+        public void Rehacer()
+        {
+            cuadroEditor.Redo();
         }
 
         public void Cortar()
@@ -211,6 +228,16 @@ namespace Speck
         public void SeleccionarTodo()
         {
             cuadroEditor.SelectAll();
+        }
+
+        private void deshacerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Deshacer();
+        }
+
+        private void rehacerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rehacer();
         }
 
         private void cortarToolStripMenuItem_Click(object sender, EventArgs e)

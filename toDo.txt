@@ -1,5 +1,4 @@
 revisar menús
-----------------------
 botones
 tabs derecha
 	lexicos
@@ -22,5 +21,4 @@ fuentes
 	helvetica neue
 	meslo
 temas
-	tema transparente
 pestañas
