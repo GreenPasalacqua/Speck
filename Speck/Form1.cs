@@ -18,8 +18,10 @@ namespace Speck
 
         internal const string Mensaje = @"No has guardado tu archivo. ¿Desea guardarlo?";
         internal const string Titulo = @"No soy adivino ¬¬";
-        internal const int OffsetContador = 1;
 
+        internal StringBuilder SbTitulo = new StringBuilder();
+
+        internal const int OffsetContador = 1;
         internal const string Linea = @"Ln ";
         internal const string Columna = @"Col ";
         internal StringBuilder SbLinea = new StringBuilder();
@@ -115,7 +117,9 @@ namespace Speck
                     cuadroEditor.Text = sr.ReadToEnd();
                 }
                 cuadroEditor.SetSavePoint();
-                Text = Name + Separador + Path.GetFileNameWithoutExtension(RutaArchivo);
+                SbTitulo.Clear();
+                SbTitulo.Append(Name).Append(Separador).Append(Path.GetFileNameWithoutExtension(RutaArchivo));
+                Text = SbTitulo.ToString();
             }
             cuadroEditor.EmptyUndoBuffer();
         }
@@ -153,7 +157,9 @@ namespace Speck
                     sw.Write(cuadroEditor.Text);
                 }
                 cuadroEditor.SetSavePoint();
-                Text = Name + Separador + Path.GetFileNameWithoutExtension(RutaArchivo);
+                SbTitulo.Clear();
+                SbTitulo.Append(Name).Append(Separador).Append(Path.GetFileNameWithoutExtension(RutaArchivo));
+                Text = SbTitulo.ToString();
             }
             cuadroEditor.EmptyUndoBuffer();
         }
