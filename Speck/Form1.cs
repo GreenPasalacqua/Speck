@@ -112,7 +112,7 @@ namespace Speck
                     cuadroEditor.Text = sr.ReadToEnd();
                 }
                 cuadroEditor.SetSavePoint();
-                Text =  Name + Separador + Path.GetFileNameWithoutExtension(RutaArchivo);
+                Text = Name + Separador + Path.GetFileNameWithoutExtension(RutaArchivo);
             }
         }
 
@@ -184,6 +184,53 @@ namespace Speck
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Salir();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cortarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
+            copiarToolStripMenuItem.Enabled = !cuadroEditor.SelectedText.Equals(string.Empty);
+            pegarToolStripMenuItem.Enabled = (Clipboard.ContainsText()  && cuadroEditor.CanPaste);
+        }
+
+        public void Cortar()
+        {
+            cuadroEditor.Cut();
+        }
+
+        public void Copiar()
+        {
+            cuadroEditor.Copy();
+        }
+
+        public void Pegar()
+        {
+            cuadroEditor.Paste();
+        }
+
+        public void SeleccionarTodo()
+        {
+            cuadroEditor.SelectAll();
+        }
+
+        private void cortarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cortar();
+        }
+
+        private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Copiar();
+        }
+
+        private void pegarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pegar();
+        }
+
+        private void seleccionarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SeleccionarTodo();
         }
 
         private void cuadroEditor_UpdateUI(object sender, UpdateUIEventArgs e)

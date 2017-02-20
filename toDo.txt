@@ -1,5 +1,4 @@
-revisar menú archivo
-menú editar
+revisar menús
 ----------------------
 botones
 tabs derecha
