@@ -1,7 +1,6 @@
 atajos de teclado
 menu clic derecho
 iconos
-	app
 	tema osc
 	menús
 acomodar labels status al centro
