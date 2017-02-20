@@ -79,8 +79,8 @@ namespace Speck
             }
             RutaArchivo = string.Empty;
             cuadroEditor.Text = string.Empty;
-            Text = Name;
             cuadroEditor.SetSavePoint();
+            Text = Name;
         }
 
         public void AbrirArchivo()
@@ -111,8 +111,8 @@ namespace Speck
                 {
                     cuadroEditor.Text = sr.ReadToEnd();
                 }
-                Text = Path.GetFileNameWithoutExtension(RutaArchivo) + Separador + Name;
                 cuadroEditor.SetSavePoint();
+                Text =  Name + Separador + Path.GetFileNameWithoutExtension(RutaArchivo);
             }
         }
 
@@ -148,27 +148,13 @@ namespace Speck
                 {
                     sw.Write(cuadroEditor.Text);
                 }
-                Text = Path.GetFileNameWithoutExtension(RutaArchivo) + Separador + Name;
                 cuadroEditor.SetSavePoint();
+                Text = Name + Separador + Path.GetFileNameWithoutExtension(RutaArchivo);
             }
         }
 
         public void Salir()
         {
-            if (cuadroEditor.Modified)
-            {
-                var dialogoDeseaGuardar = MessageBox.Show(this, Mensaje, Titulo, MessageBoxButtons.YesNoCancel,
-                    MessageBoxIcon.Question);
-                switch (dialogoDeseaGuardar)
-                {
-                    case DialogResult.Yes:
-                        GuardarArchivo();
-                        break;
-                    case DialogResult.Cancel:
-                        return;
-                }
-            }
-
             if (Application.MessageLoop)
                 Application.Exit();
             else
