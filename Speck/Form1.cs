@@ -9,9 +9,12 @@ namespace Speck
 {
     public partial class Speck : Form
     {
-        internal string NombreArchivo;
+        internal string RutaArchivo = string.Empty;
 
         internal string CarpetaInicial = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
+        internal const string Separador = @" - ";
+        internal const string CaracterNoGuardado = @"*";
 
         internal const string Mensaje = @"No has guardado tu archivo. ¿Desea guardarlo?";
         internal const string Titulo = @"No soy adivino ¬¬";
@@ -21,7 +24,6 @@ namespace Speck
         internal const string Columna = @"Col ";
         internal StringBuilder SbLinea = new StringBuilder();
         internal StringBuilder SbColumna = new StringBuilder();
-        internal StringBuilder SbModificacion = new StringBuilder();
 
         internal int LongitudMaximaNumeroLinea;
         internal const int PaddingNumeroLinea = 2;
@@ -30,56 +32,39 @@ namespace Speck
         {
             InitializeComponent();
 
-            //Configurar estilo (Fuente y Tamaño)
             cuadroEditor.StyleResetDefault();
             cuadroEditor.Styles[Style.Default].Font = "Meslo LG S Regular";
             cuadroEditor.Styles[Style.Default].Size = 10;
             cuadroEditor.StyleClearAll();
 
-            //Colores texto
-            cuadroEditor.Styles[Style.Cpp.CommentLine].ForeColor = Color.FromArgb(0, 128, 0);
-            cuadroEditor.Styles[Style.Cpp.Comment].ForeColor = Color.FromArgb(0, 128, 0);
-            cuadroEditor.Styles[Style.Cpp.CommentLineDoc].ForeColor = Color.FromArgb(128, 128, 128);
-            cuadroEditor.Styles[Style.Cpp.Number].ForeColor = Color.Black;
-            cuadroEditor.Styles[Style.Cpp.Word].ForeColor = Color.Blue;
-            cuadroEditor.Styles[Style.Cpp.Word2].ForeColor = Color.FromArgb(173, 91, 255);
-            cuadroEditor.Styles[Style.Cpp.String].ForeColor = Color.FromArgb(163, 21, 21);
-            cuadroEditor.Styles[Style.Cpp.Character].ForeColor = Color.FromArgb(163, 21, 21);
-
-            //Palabras clave
-            cuadroEditor.SetKeywords(0, "if while do for int float string");
-            cuadroEditor.SetKeywords(1, "lol asd qwe");
-
-            //Número de linea
             cuadroEditor.Margins[0].Width = 16;
-            cuadroEditor.Styles[Style.LineNumber].Font = "Calibri";
+            cuadroEditor.Styles[Style.LineNumber].Font = "HelveticaNeue Light";
             cuadroEditor.Styles[Style.LineNumber].ForeColor = Color.White;
             cuadroEditor.Styles[Style.LineNumber].BackColor = Color.FromArgb(0, 88, 191, 255);
             cuadroEditor.Margins[0].Type = MarginType.Number;
         }
 
-        private void GuardarArchivo()
+        private void Speck_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var guardaLaGuindow = new SaveFileDialog();
-            guardaLaGuindow.Filter = @"Prru (*.prru)|*.prru";
-            guardaLaGuindow.InitialDirectory = CarpetaInicial;
-            if (guardaLaGuindow.ShowDialog() == DialogResult.OK)
-                NombreArchivo = guardaLaGuindow.FileName;
-
-            if (!NombreArchivo.Equals(string.Empty))
+            if (cuadroEditor.Modified)
             {
-                var sw = new StreamWriter(NombreArchivo);
-                sw.Write(cuadroEditor.Text);
-                sw.Close();
-                SbModificacion.Clear();
-                SbModificacion.Append(cuadroEditor.Text);
+                var dialogoDeseaGuardar = MessageBox.Show(this, Mensaje, Titulo, MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question);
+                switch (dialogoDeseaGuardar)
+                {
+                    case DialogResult.Yes:
+                        GuardarArchivo();
+                        break;
+                    case DialogResult.Cancel:
+                        e.Cancel = true;
+                        break;
+                }
             }
         }
 
-        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        public void NuevoArchivo()
         {
-            if (NombreArchivo == null && !cuadroEditor.Text.Equals(string.Empty) ||
-                !cuadroEditor.Text.Equals(SbModificacion.ToString()))
+            if (cuadroEditor.Modified)
             {
                 var dialogoDeseaGuardar = MessageBox.Show(this, Mensaje, Titulo, MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Question);
@@ -92,15 +77,15 @@ namespace Speck
                         return;
                 }
             }
+            RutaArchivo = string.Empty;
             cuadroEditor.Text = string.Empty;
-            NombreArchivo = null;
-            SbModificacion.Clear();
+            Text = Name;
+            cuadroEditor.SetSavePoint();
         }
 
-        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        public void AbrirArchivo()
         {
-            if (NombreArchivo == null && !cuadroEditor.Text.Equals(string.Empty) ||
-                !cuadroEditor.Text.Equals(SbModificacion.ToString()))
+            if (cuadroEditor.Modified)
             {
                 var dialogoDeseaGuardar = MessageBox.Show(this, Mensaje, Titulo, MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Question);
@@ -113,50 +98,64 @@ namespace Speck
                         return;
                 }
             }
-            var openDeGuindou = new OpenFileDialog();
-            openDeGuindou.Filter = @"Prru (*.prru)|*.prru|Todos los archivos|*.*";
-            openDeGuindou.InitialDirectory = CarpetaInicial;
 
+            var openDeGuindou = new OpenFileDialog
+            {
+                Filter = @"Prru (*.prru)|*.prru|Todos los archivos|*.*",
+                InitialDirectory = CarpetaInicial
+            };
             if (openDeGuindou.ShowDialog() == DialogResult.OK)
             {
-                NombreArchivo = openDeGuindou.FileName;
-                var sr = new StreamReader(NombreArchivo, Encoding.Default, true);
-                cuadroEditor.Text = sr.ReadToEnd();
-                sr.Close();
-                SbModificacion.Clear();
-                SbModificacion.Append(cuadroEditor.Text);
+                RutaArchivo = openDeGuindou.FileName;
+                using (var sr = new StreamReader(RutaArchivo, Encoding.Default, true))
+                {
+                    cuadroEditor.Text = sr.ReadToEnd();
+                }
+                Text = Path.GetFileNameWithoutExtension(RutaArchivo) + Separador + Name;
+                cuadroEditor.SetSavePoint();
             }
         }
 
-        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        public void GuardarArchivo()
         {
-            if (NombreArchivo == null)
+            if (RutaArchivo.Equals(string.Empty))
             {
-                var guardaLaGuindow = new SaveFileDialog();
-                guardaLaGuindow.Filter = @"Prru (*.prru)|*.prru";
-                guardaLaGuindow.InitialDirectory = CarpetaInicial;
-                if (guardaLaGuindow.ShowDialog() == DialogResult.OK)
-                    NombreArchivo = guardaLaGuindow.FileName;
+                GuardarArchivoComo();
             }
             else
             {
-                var sw = new StreamWriter(NombreArchivo);
-                sw.Write(cuadroEditor.Text);
-                sw.Close();
-                SbModificacion.Clear();
-                SbModificacion.Append(cuadroEditor.Text);
+                using (var sw = new StreamWriter(RutaArchivo))
+                {
+                    sw.Write(cuadroEditor.Text);
+                }
+                cuadroEditor.SetSavePoint();
             }
         }
 
-        private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
+        public void GuardarArchivoComo()
         {
-            GuardarArchivo();
+            var guardaLaGuindow = new SaveFileDialog
+            {
+                Filter = @"Prru (*.prru)|*.prru",
+                InitialDirectory = CarpetaInicial
+            };
+            if (guardaLaGuindow.ShowDialog() == DialogResult.OK)
+                RutaArchivo = guardaLaGuindow.FileName;
+
+            if (!RutaArchivo.Equals(string.Empty))
+            {
+                using (var sw = new StreamWriter(RutaArchivo))
+                {
+                    sw.Write(cuadroEditor.Text);
+                }
+                Text = Path.GetFileNameWithoutExtension(RutaArchivo) + Separador + Name;
+                cuadroEditor.SetSavePoint();
+            }
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        public void Salir()
         {
-            if (NombreArchivo == null && !cuadroEditor.Text.Equals(string.Empty) ||
-                !cuadroEditor.Text.Equals(SbModificacion.ToString()))
+            if (cuadroEditor.Modified)
             {
                 var dialogoDeseaGuardar = MessageBox.Show(this, Mensaje, Titulo, MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Question);
@@ -174,6 +173,31 @@ namespace Speck
                 Application.Exit();
             else
                 Environment.Exit(1);
+        }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoArchivo();
+        }
+
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirArchivo();
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GuardarArchivo();
+        }
+
+        private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GuardarArchivoComo();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Salir();
         }
 
         private void cuadroEditor_UpdateUI(object sender, UpdateUIEventArgs e)
@@ -201,6 +225,18 @@ namespace Speck
                 cuadroEditor.TextWidth(Style.LineNumber, new string('9', longitudMaximaNumeroLinea + 1)) +
                 PaddingNumeroLinea;
             LongitudMaximaNumeroLinea = longitudMaximaNumeroLinea;
+        }
+
+        private void cuadroEditor_SavePointLeft(object sender, EventArgs e)
+        {
+            barraEstado.BackColor = Color.FromArgb(barraEstado.BackColor.ToArgb() ^ 0xffffff);
+            Text = Text.Insert(Text.Length, CaracterNoGuardado);
+        }
+
+        private void cuadroEditor_SavePointReached(object sender, EventArgs e)
+        {
+            barraEstado.BackColor = Color.FromArgb(barraEstado.BackColor.ToArgb() ^ 0xffffff);
+            Text = Text.Remove(Text.Length - 1);
         }
     }
 }

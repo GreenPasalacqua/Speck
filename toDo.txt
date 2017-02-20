@@ -1,8 +1,6 @@
-hacer funciones
 revisar menú archivo
-revisar código
-----------------------
 menú editar
+----------------------
 botones
 tabs derecha
 	lexicos
@@ -17,17 +15,13 @@ tabs debajo
 	Salida
 Acomodo componentes
 ------------------------
-why &
-lexer
-nombre archivo
-cambiar color barra estado cuando mod
-menu clic derecho
 atajos de teclado
+menu clic derecho
+iconos
 acomodar labels status al centro
 fuentes
 	helvetica neue
 	meslo
-iconos
 temas
 	tema transparente
 pestañas
