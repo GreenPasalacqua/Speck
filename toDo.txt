@@ -1,4 +1,3 @@
-revisar menús
 botones
 ------------------------
 atajos de teclado

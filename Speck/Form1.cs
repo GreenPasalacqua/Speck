@@ -33,6 +33,11 @@ namespace Speck
         public Speck()
         {
             InitializeComponent();
+            //Full screen, como para juegos
+            /*WindowState = FormWindowState.Maximized;
+            FormBorderStyle = FormBorderStyle.None;*/
+
+            
 
             cuadroEditor.StyleResetDefault();
             cuadroEditor.Styles[Style.Default].Font = "Meslo LG S Regular";
