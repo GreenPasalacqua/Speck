@@ -86,7 +86,7 @@
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.cuadroEditor);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.barraEstado);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1285, 675);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1285, 656);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -105,7 +105,7 @@
             this.cuadroEditor.Location = new System.Drawing.Point(0, 0);
             this.cuadroEditor.Name = "cuadroEditor";
             this.cuadroEditor.ScrollWidth = 1;
-            this.cuadroEditor.Size = new System.Drawing.Size(1285, 653);
+            this.cuadroEditor.Size = new System.Drawing.Size(1285, 634);
             this.cuadroEditor.TabIndex = 0;
             this.cuadroEditor.SavePointLeft += new System.EventHandler<System.EventArgs>(this.cuadroEditor_SavePointLeft);
             this.cuadroEditor.SavePointReached += new System.EventHandler<System.EventArgs>(this.cuadroEditor_SavePointReached);
@@ -120,7 +120,7 @@
             this.barraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.labelLinea,
             this.labelColumna});
-            this.barraEstado.Location = new System.Drawing.Point(0, 653);
+            this.barraEstado.Location = new System.Drawing.Point(0, 634);
             this.barraEstado.Name = "barraEstado";
             this.barraEstado.Size = new System.Drawing.Size(1285, 22);
             this.barraEstado.SizingGrip = false;
@@ -150,7 +150,7 @@
             this.compilarToolStripMenuItem});
             this.barraMenu.Location = new System.Drawing.Point(0, 0);
             this.barraMenu.Name = "barraMenu";
-            this.barraMenu.Size = new System.Drawing.Size(1285, 42);
+            this.barraMenu.Size = new System.Drawing.Size(1285, 36);
             this.barraMenu.TabIndex = 2;
             // 
             // archivoToolStripMenuItem
@@ -165,7 +165,7 @@
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Font = new System.Drawing.Font("HelveticaNeue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(100, 38);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(100, 32);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // nuevoToolStripMenuItem
@@ -225,7 +225,7 @@
             this.toolStripSeparator3,
             this.seleccionarTodoToolStripMenuItem});
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(83, 38);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(83, 32);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // deshacerToolStripMenuItem
@@ -289,7 +289,7 @@
             this.toolStripSeparator4,
             this.compilarToolStripMenuItem1});
             this.compilarToolStripMenuItem.Name = "compilarToolStripMenuItem";
-            this.compilarToolStripMenuItem.Size = new System.Drawing.Size(150, 38);
+            this.compilarToolStripMenuItem.Size = new System.Drawing.Size(150, 32);
             this.compilarToolStripMenuItem.Text = "Compilación";
             // 
             // léxicoToolStripMenuItem
@@ -339,7 +339,7 @@
             this.botonSintactico,
             this.botonSemantico,
             this.botonCompilar});
-            this.barraBotones.Location = new System.Drawing.Point(3, 42);
+            this.barraBotones.Location = new System.Drawing.Point(3, 36);
             this.barraBotones.Name = "barraBotones";
             this.barraBotones.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.barraBotones.Size = new System.Drawing.Size(375, 39);

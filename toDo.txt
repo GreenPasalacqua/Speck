@@ -1,17 +1,5 @@
 revisar menús
 botones
-tabs derecha
-	lexicos
-	sintactico
-	semantico
-	codigo intermedio
-tabs debajo
-	Errores lexicos
-	Errores sintacticos
-	Errores semanticos
-	Tabla de simbolos
-	Salida
-Acomodo componentes
 ------------------------
 atajos de teclado
 menu clic derecho
