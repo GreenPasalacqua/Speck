@@ -1,4 +1,3 @@
-atajos de teclado
 menu clic derecho
 iconos
 	tema osc
