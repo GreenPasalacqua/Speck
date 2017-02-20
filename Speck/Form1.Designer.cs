@@ -352,6 +352,7 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
@@ -359,6 +360,7 @@
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
+            this.abrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.abrirToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.abrirToolStripMenuItem.Text = "Abrir";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
@@ -371,6 +373,7 @@
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.guardarToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
@@ -390,6 +393,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
@@ -412,14 +416,16 @@
             // deshacerToolStripMenuItem
             // 
             this.deshacerToolStripMenuItem.Name = "deshacerToolStripMenuItem";
-            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.deshacerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.deshacerToolStripMenuItem.Text = "Deshacer";
             this.deshacerToolStripMenuItem.Click += new System.EventHandler(this.deshacerToolStripMenuItem_Click);
             // 
             // rehacerToolStripMenuItem
             // 
             this.rehacerToolStripMenuItem.Name = "rehacerToolStripMenuItem";
-            this.rehacerToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.rehacerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.rehacerToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.rehacerToolStripMenuItem.Text = "Rehacer";
             this.rehacerToolStripMenuItem.Click += new System.EventHandler(this.rehacerToolStripMenuItem_Click);
             // 
@@ -431,21 +437,24 @@
             // cortarToolStripMenuItem
             // 
             this.cortarToolStripMenuItem.Name = "cortarToolStripMenuItem";
-            this.cortarToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.cortarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cortarToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.cortarToolStripMenuItem.Text = "Cortar";
             this.cortarToolStripMenuItem.Click += new System.EventHandler(this.cortarToolStripMenuItem_Click);
             // 
             // copiarToolStripMenuItem
             // 
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.copiarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
             // pegarToolStripMenuItem
             // 
             this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
-            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.pegarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.pegarToolStripMenuItem.Text = "Pegar";
             this.pegarToolStripMenuItem.Click += new System.EventHandler(this.pegarToolStripMenuItem_Click);
             // 
@@ -457,7 +466,8 @@
             // seleccionarTodoToolStripMenuItem
             // 
             this.seleccionarTodoToolStripMenuItem.Name = "seleccionarTodoToolStripMenuItem";
-            this.seleccionarTodoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.seleccionarTodoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.seleccionarTodoToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.seleccionarTodoToolStripMenuItem.Text = "Seleccionar Todo";
             this.seleccionarTodoToolStripMenuItem.Click += new System.EventHandler(this.seleccionarTodoToolStripMenuItem_Click);
             // 
