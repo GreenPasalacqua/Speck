@@ -311,13 +311,17 @@
             // 
             this.labelLinea.ForeColor = System.Drawing.Color.White;
             this.labelLinea.Name = "labelLinea";
-            this.labelLinea.Size = new System.Drawing.Size(0, 17);
+            this.labelLinea.Size = new System.Drawing.Size(409, 17);
+            this.labelLinea.Spring = true;
+            this.labelLinea.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelColumna
             // 
             this.labelColumna.ForeColor = System.Drawing.Color.White;
             this.labelColumna.Name = "labelColumna";
-            this.labelColumna.Size = new System.Drawing.Size(0, 0);
+            this.labelColumna.Size = new System.Drawing.Size(409, 17);
+            this.labelColumna.Spring = true;
+            this.labelColumna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // barraMenu
             // 

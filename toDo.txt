@@ -2,7 +2,6 @@ menu clic derecho
 iconos
 	tema osc
 	menús
-acomodar labels status al centro
 temas
 explorador a un costado
 pestañas
