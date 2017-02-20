@@ -131,7 +131,7 @@
             this.cuadroEditor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cuadroEditor.Name = "cuadroEditor";
             this.cuadroEditor.ScrollWidth = 1;
-            this.cuadroEditor.Size = new System.Drawing.Size(452, 186);
+            this.cuadroEditor.Size = new System.Drawing.Size(562, 186);
             this.cuadroEditor.TabIndex = 0;
             this.cuadroEditor.SavePointLeft += new System.EventHandler<System.EventArgs>(this.cuadroEditor_SavePointLeft);
             this.cuadroEditor.SavePointReached += new System.EventHandler<System.EventArgs>(this.cuadroEditor_SavePointReached);
@@ -505,7 +505,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer2.Size = new System.Drawing.Size(803, 186);
-            this.splitContainer2.SplitterDistance = 452;
+            this.splitContainer2.SplitterDistance = 562;
             this.splitContainer2.TabIndex = 0;
             // 
             // tabControl1
@@ -518,7 +518,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(347, 186);
+            this.tabControl1.Size = new System.Drawing.Size(237, 186);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -536,11 +536,10 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(339, 160);
+            this.tabPage2.Size = new System.Drawing.Size(229, 160);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sintáctico";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // tabControl2
             // 
@@ -581,7 +580,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(339, 160);
+            this.tabPage5.Size = new System.Drawing.Size(229, 160);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Semántico";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -591,7 +590,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(339, 160);
+            this.tabPage6.Size = new System.Drawing.Size(229, 160);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Código Intermedio";
             this.tabPage6.UseVisualStyleBackColor = true;
