@@ -3,9 +3,6 @@ iconos
 	tema osc
 	menús
 acomodar labels status al centro
-fuentes
-	helvetica neue
-	meslo
 temas
 explorador a un costado
 pestañas
