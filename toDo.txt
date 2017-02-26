@@ -1,7 +1,9 @@
-menu clic derecho
 iconos
-	tema osc
-	menús
+iconos tema osc
+iconos menús
+splash screen
+menu clic derecho
 temas
+instalador/iconos archivos
 explorador a un costado
 pestañas
