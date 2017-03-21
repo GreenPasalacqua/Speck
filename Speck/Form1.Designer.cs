@@ -188,7 +188,7 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("HelveticaNeue", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("HelveticaNeue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl1.Name = "tabControl1";
@@ -199,11 +199,11 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.textboxLexicoChido);
-            this.tabPage1.Location = new System.Drawing.Point(8, 40);
+            this.tabPage1.Location = new System.Drawing.Point(8, 42);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage1.Size = new System.Drawing.Size(524, 623);
+            this.tabPage1.Size = new System.Drawing.Size(524, 621);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lexíco";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -212,10 +212,11 @@
             // 
             this.textboxLexicoChido.BackColor = System.Drawing.Color.Black;
             this.textboxLexicoChido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textboxLexicoChido.Font = new System.Drawing.Font("Meslo LG S", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxLexicoChido.ForeColor = System.Drawing.Color.White;
             this.textboxLexicoChido.Location = new System.Drawing.Point(6, 6);
             this.textboxLexicoChido.Name = "textboxLexicoChido";
-            this.textboxLexicoChido.Size = new System.Drawing.Size(512, 611);
+            this.textboxLexicoChido.Size = new System.Drawing.Size(512, 609);
             this.textboxLexicoChido.TabIndex = 0;
             this.textboxLexicoChido.Text = "";
             // 
@@ -260,7 +261,7 @@
             this.tabControl2.Controls.Add(this.tabPage8);
             this.tabControl2.Controls.Add(this.tabPage9);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Font = new System.Drawing.Font("HelveticaNeue", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl2.Font = new System.Drawing.Font("HelveticaNeue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl2.Name = "tabControl2";
@@ -271,11 +272,11 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.textboxErrorLexico);
-            this.tabPage3.Location = new System.Drawing.Point(8, 40);
+            this.tabPage3.Location = new System.Drawing.Point(8, 42);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage3.Size = new System.Drawing.Size(1696, 136);
+            this.tabPage3.Size = new System.Drawing.Size(1696, 134);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Errores Léxicos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -284,10 +285,11 @@
             // 
             this.textboxErrorLexico.BackColor = System.Drawing.Color.Black;
             this.textboxErrorLexico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textboxErrorLexico.Font = new System.Drawing.Font("Meslo LG S", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxErrorLexico.ForeColor = System.Drawing.Color.OrangeRed;
             this.textboxErrorLexico.Location = new System.Drawing.Point(6, 6);
             this.textboxErrorLexico.Name = "textboxErrorLexico";
-            this.textboxErrorLexico.Size = new System.Drawing.Size(1684, 124);
+            this.textboxErrorLexico.Size = new System.Drawing.Size(1684, 122);
             this.textboxErrorLexico.TabIndex = 0;
             this.textboxErrorLexico.Text = "";
             // 
@@ -533,31 +535,31 @@
             // léxicoToolStripMenuItem
             // 
             this.léxicoToolStripMenuItem.Name = "léxicoToolStripMenuItem";
-            this.léxicoToolStripMenuItem.Size = new System.Drawing.Size(217, 38);
+            this.léxicoToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
             this.léxicoToolStripMenuItem.Text = "&Léxico";
             this.léxicoToolStripMenuItem.Click += new System.EventHandler(this.léxicoToolStripMenuItem_Click);
             // 
             // sintácticoToolStripMenuItem
             // 
             this.sintácticoToolStripMenuItem.Name = "sintácticoToolStripMenuItem";
-            this.sintácticoToolStripMenuItem.Size = new System.Drawing.Size(217, 38);
+            this.sintácticoToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
             this.sintácticoToolStripMenuItem.Text = "&Sintáctico";
             // 
             // semánticoToolStripMenuItem
             // 
             this.semánticoToolStripMenuItem.Name = "semánticoToolStripMenuItem";
-            this.semánticoToolStripMenuItem.Size = new System.Drawing.Size(217, 38);
+            this.semánticoToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
             this.semánticoToolStripMenuItem.Text = "Se&mántico";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(214, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(266, 6);
             // 
             // compilarToolStripMenuItem1
             // 
             this.compilarToolStripMenuItem1.Name = "compilarToolStripMenuItem1";
-            this.compilarToolStripMenuItem1.Size = new System.Drawing.Size(217, 38);
+            this.compilarToolStripMenuItem1.Size = new System.Drawing.Size(269, 38);
             this.compilarToolStripMenuItem1.Text = "Com&pilar";
             // 
             // barraBotones

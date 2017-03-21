@@ -1,0 +1,14 @@
+& Ln 1 Col 15
+@ Ln 1 Col 24
+. Ln 2 Col 23
+. Ln 2 Col 29
+= Ln 3 Col 15
+= Ln 7 Col 2
+= Ln 8 Col 2
+= Ln 9 Col 2
+= Ln 10 Col 2
+= Ln 12 Col 10
+= Ln 15 Col 15
+= Ln 17 Col 13
+= Ln 19 Col 9
+= Ln 22 Col 2

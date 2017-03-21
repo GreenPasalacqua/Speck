@@ -15,6 +15,9 @@ namespace Speck
         internal string CarpetaInicial = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         internal string RutaAnalizadorLexico = Path.Combine(Directory.GetCurrentDirectory(), @"lexico.py");
 
+        internal const string ReservadasUno = @"main if then else end do while repeat until cin cout";
+        internal const string ReservadasDos = @"real int boolean";
+
         internal const string Separador = @" - ";
         internal const string CaracterNoGuardado = @"*";
 
@@ -61,6 +64,24 @@ namespace Speck
             cuadroEditor.SetSelectionBackColor(true, Color.DodgerBlue);
             cuadroEditor.SetSelectionForeColor(true, Color.White);
             cuadroEditor.StyleClearAll();
+            
+            cuadroEditor.Styles[Style.Cpp.Default].ForeColor = Color.Black;
+            cuadroEditor.Styles[Style.Cpp.Comment].ForeColor = Color.LightSteelBlue;
+            cuadroEditor.Styles[Style.Cpp.CommentLine].ForeColor = Color.LightSteelBlue;
+            cuadroEditor.Styles[Style.Cpp.CommentDoc].ForeColor = Color.LightSteelBlue;
+            cuadroEditor.Styles[Style.Cpp.Number].ForeColor = Color.Crimson;
+            cuadroEditor.Styles[Style.Cpp.Word].ForeColor = Color.Blue;
+            cuadroEditor.Styles[Style.Cpp.Word2].ForeColor = Color.Blue;
+            cuadroEditor.Styles[Style.Cpp.String].ForeColor = Color.Black;
+            cuadroEditor.Styles[Style.Cpp.Character].ForeColor = Color.Black;
+            cuadroEditor.Styles[Style.Cpp.Verbatim].ForeColor = Color.Black;
+            cuadroEditor.Styles[Style.Cpp.StringEol].ForeColor = Color.Black;
+            cuadroEditor.Styles[Style.Cpp.Operator].ForeColor = Color.Black;
+            cuadroEditor.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Black;
+            cuadroEditor.Lexer = Lexer.Cpp;
+
+            cuadroEditor.SetKeywords(0, ReservadasUno);
+            cuadroEditor.SetKeywords(1, ReservadasDos);
 
             cuadroEditor.Margins[0].Width = 16;
             cuadroEditor.Styles[Style.LineNumber].Font = "HelveticaNeue Light";
@@ -147,6 +168,8 @@ namespace Speck
                 Text = SbTitulo.ToString();
             }
             cuadroEditor.EmptyUndoBuffer();
+            textboxLexicoChido.Text = string.Empty;
+            textboxErrorLexico.Text = string.Empty;
         }
 
         public void GuardarArchivo()
