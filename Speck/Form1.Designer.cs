@@ -35,11 +35,13 @@
             this.cuadroEditor = new ScintillaNET.Scintilla();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textboxLexicoChido = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textboxErrorLexico = new System.Windows.Forms.RichTextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
@@ -96,7 +98,9 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.barraEstado.SuspendLayout();
             this.barraMenu.SuspendLayout();
             this.barraBotones.SuspendLayout();
@@ -109,11 +113,11 @@
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.barraEstado);
-            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1712, 885);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.Size = new System.Drawing.Size(1712, 960);
             this.toolStripContainer1.TabIndex = 3;
@@ -128,7 +132,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(6);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -140,7 +144,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
             this.splitContainer1.Size = new System.Drawing.Size(1712, 863);
-            this.splitContainer1.SplitterDistance = 673;
+            this.splitContainer1.SplitterDistance = 671;
             this.splitContainer1.SplitterWidth = 8;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -148,7 +152,7 @@
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(6);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -158,7 +162,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer2.Size = new System.Drawing.Size(1712, 673);
+            this.splitContainer2.Size = new System.Drawing.Size(1712, 671);
             this.splitContainer2.SplitterDistance = 1164;
             this.splitContainer2.SplitterWidth = 8;
             this.splitContainer2.TabIndex = 0;
@@ -167,10 +171,10 @@
             // 
             this.cuadroEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cuadroEditor.Location = new System.Drawing.Point(0, 0);
-            this.cuadroEditor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cuadroEditor.Margin = new System.Windows.Forms.Padding(4);
             this.cuadroEditor.Name = "cuadroEditor";
             this.cuadroEditor.ScrollWidth = 1;
-            this.cuadroEditor.Size = new System.Drawing.Size(1164, 673);
+            this.cuadroEditor.Size = new System.Drawing.Size(1164, 671);
             this.cuadroEditor.TabIndex = 0;
             this.cuadroEditor.SavePointLeft += new System.EventHandler<System.EventArgs>(this.cuadroEditor_SavePointLeft);
             this.cuadroEditor.SavePointReached += new System.EventHandler<System.EventArgs>(this.cuadroEditor_SavePointReached);
@@ -186,30 +190,42 @@
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("HelveticaNeue", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(540, 673);
+            this.tabControl1.Size = new System.Drawing.Size(540, 671);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textboxLexicoChido);
             this.tabPage1.Location = new System.Drawing.Point(8, 40);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage1.Size = new System.Drawing.Size(524, 625);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage1.Size = new System.Drawing.Size(524, 623);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lexíco";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textboxLexicoChido
+            // 
+            this.textboxLexicoChido.BackColor = System.Drawing.Color.Black;
+            this.textboxLexicoChido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textboxLexicoChido.ForeColor = System.Drawing.Color.White;
+            this.textboxLexicoChido.Location = new System.Drawing.Point(6, 6);
+            this.textboxLexicoChido.Name = "textboxLexicoChido";
+            this.textboxLexicoChido.Size = new System.Drawing.Size(512, 611);
+            this.textboxLexicoChido.TabIndex = 0;
+            this.textboxLexicoChido.Text = "";
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(8, 40);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage2.Size = new System.Drawing.Size(524, 554);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage2.Size = new System.Drawing.Size(524, 623);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sintáctico";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -217,10 +233,10 @@
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(8, 40);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage5.Size = new System.Drawing.Size(524, 554);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage5.Size = new System.Drawing.Size(524, 623);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Semántico";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -228,10 +244,10 @@
             // tabPage6
             // 
             this.tabPage6.Location = new System.Drawing.Point(8, 40);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage6.Size = new System.Drawing.Size(524, 554);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage6.Size = new System.Drawing.Size(524, 623);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Código Intermedio";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -246,30 +262,42 @@
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Font = new System.Drawing.Font("HelveticaNeue", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1712, 182);
+            this.tabControl2.Size = new System.Drawing.Size(1712, 184);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.textboxErrorLexico);
             this.tabPage3.Location = new System.Drawing.Point(8, 40);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage3.Size = new System.Drawing.Size(1696, 134);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage3.Size = new System.Drawing.Size(1696, 136);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Errores Léxicos";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // textboxErrorLexico
+            // 
+            this.textboxErrorLexico.BackColor = System.Drawing.Color.Black;
+            this.textboxErrorLexico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textboxErrorLexico.ForeColor = System.Drawing.Color.OrangeRed;
+            this.textboxErrorLexico.Location = new System.Drawing.Point(6, 6);
+            this.textboxErrorLexico.Name = "textboxErrorLexico";
+            this.textboxErrorLexico.Size = new System.Drawing.Size(1684, 124);
+            this.textboxErrorLexico.TabIndex = 0;
+            this.textboxErrorLexico.Text = "";
+            // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(8, 40);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage4.Size = new System.Drawing.Size(1696, 115);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage4.Size = new System.Drawing.Size(1696, 136);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Errores Sintácticos";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -277,10 +305,10 @@
             // tabPage7
             // 
             this.tabPage7.Location = new System.Drawing.Point(8, 40);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage7.Size = new System.Drawing.Size(1696, 115);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage7.Size = new System.Drawing.Size(1696, 136);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Errores Semánticos";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -288,10 +316,10 @@
             // tabPage8
             // 
             this.tabPage8.Location = new System.Drawing.Point(8, 40);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage8.Size = new System.Drawing.Size(1696, 115);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage8.Size = new System.Drawing.Size(1696, 136);
             this.tabPage8.TabIndex = 3;
             this.tabPage8.Text = "Tabla de Símbolos";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -299,10 +327,10 @@
             // tabPage9
             // 
             this.tabPage9.Location = new System.Drawing.Point(8, 40);
-            this.tabPage9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage9.Size = new System.Drawing.Size(1696, 115);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage9.Size = new System.Drawing.Size(1696, 136);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "Salida";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -507,6 +535,7 @@
             this.léxicoToolStripMenuItem.Name = "léxicoToolStripMenuItem";
             this.léxicoToolStripMenuItem.Size = new System.Drawing.Size(217, 38);
             this.léxicoToolStripMenuItem.Text = "&Léxico";
+            this.léxicoToolStripMenuItem.Click += new System.EventHandler(this.léxicoToolStripMenuItem_Click);
             // 
             // sintácticoToolStripMenuItem
             // 
@@ -640,6 +669,7 @@
             this.botonLexico.Size = new System.Drawing.Size(36, 36);
             this.botonLexico.Text = "botonLexico";
             this.botonLexico.ToolTipText = "Léxico";
+            this.botonLexico.Click += new System.EventHandler(this.botonLexico_Click);
             // 
             // botonSintactico
             // 
@@ -679,7 +709,7 @@
             this.ClientSize = new System.Drawing.Size(1712, 960);
             this.Controls.Add(this.toolStripContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Speck";
             this.Text = "Speck";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Speck_FormClosing);
@@ -698,7 +728,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.barraEstado.ResumeLayout(false);
             this.barraEstado.PerformLayout();
             this.barraMenu.ResumeLayout(false);
@@ -766,6 +798,8 @@
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.RichTextBox textboxLexicoChido;
+        private System.Windows.Forms.RichTextBox textboxErrorLexico;
     }
 }
 

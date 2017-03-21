@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
@@ -12,12 +13,21 @@ namespace Speck
         internal string RutaArchivo = string.Empty;
 
         internal string CarpetaInicial = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        internal string RutaAnalizadorLexico = Path.Combine(Directory.GetCurrentDirectory(), @"lexico.py");
 
         internal const string Separador = @" - ";
         internal const string CaracterNoGuardado = @"*";
 
         internal const string Mensaje = @"No has guardado tu archivo. ¿Desea guardarlo?";
         internal const string Titulo = @"No soy adivino ¬¬";
+
+        internal const string TituloLexico = @"¡Está en blanco! ¡Mi compilador!";
+        internal const string MensajeLexico = @"¡Debes hacer algo para que yo pueda hacer algo!";
+
+        internal const string Python = @"C:\Python27\python.exe";
+        internal const string DirectorioLexico = @"Lexico";
+        internal const string ArchivoLexico = @"lexemas.txt";
+        internal const string ArchivoErroresLexico = @"errores_lexicos.txt";
 
         internal StringBuilder SbTitulo = new StringBuilder();
 
@@ -41,6 +51,9 @@ namespace Speck
             StartPosition = FormStartPosition.Manual;
             Location = new Point(0, 0);
             Size = Screen.PrimaryScreen.WorkingArea.Size;
+
+            textboxLexicoChido.ReadOnly = true;
+            textboxErrorLexico.ReadOnly = true;
 
             cuadroEditor.StyleResetDefault();
             cuadroEditor.Styles[Style.Default].Font = "Meslo LG S Regular";
@@ -96,6 +109,8 @@ namespace Speck
             SbTitulo.Append(Name);
             Text = SbTitulo.ToString();
             cuadroEditor.EmptyUndoBuffer();
+            textboxLexicoChido.Text = string.Empty;
+            textboxErrorLexico.Text = string.Empty;
         }
 
         public void AbrirArchivo()
@@ -295,6 +310,48 @@ namespace Speck
         private void seleccionarTodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SeleccionarTodo();
+        }
+
+        public void ComandoPython(string argumentos)
+        {
+            using (Process proceso = new Process())
+            {
+                proceso.StartInfo = new ProcessStartInfo(Python, argumentos)
+                {
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+                proceso.Start();
+                string salida = proceso.StandardOutput.ReadToEnd();
+                proceso.WaitForExit();
+                Console.WriteLine(salida);
+                Console.ReadLine();
+            }
+        }
+
+        public void Lexico()
+        {
+            GuardarArchivo();
+            if (!RutaArchivo.Equals(string.Empty))
+            {
+                ComandoPython(RutaAnalizadorLexico + " " + RutaArchivo);
+                var rutaLexico = Path.Combine(Directory.GetCurrentDirectory(), DirectorioLexico, ArchivoLexico);
+                var rutaErrorLexico = Path.Combine(Directory.GetCurrentDirectory(), DirectorioLexico,
+                    ArchivoErroresLexico);
+                textboxLexicoChido.Text = File.ReadAllText(rutaLexico);
+                textboxErrorLexico.Text = File.ReadAllText(rutaErrorLexico);
+            }
+        }
+
+        private void léxicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lexico();
+        }
+
+        private void botonLexico_Click(object sender, EventArgs e)
+        {
+            Lexico();
         }
 
         private void cuadroEditor_UpdateUI(object sender, UpdateUIEventArgs e)
