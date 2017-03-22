@@ -1,176 +1,176 @@
-int		Palabra reservada
-vector		Identificador
-,		Simbolo especial
-su		Identificador
-mas		Identificador
-,		Simbolo especial
-res		Identificador
-tas		Identificador
-,		Simbolo especial
-suma1		Identificador
-,		Simbolo especial
-suma2		Identificador
-,		Simbolo especial
-25		Constante numerica entera
-ert		Identificador
-;		Simbolo especial
-main		Palabra reservada
-if		Palabra reservada
-(		Simbolo especial
-while		Palabra reservada
-)		Simbolo especial
-if		Palabra reservada
-+34.34		Constante numerica real
-34.34		Constante numerica real
-34		Constante numerica entera
--34		Constante numerica entera
-++		Simbolo especial
-+		Simbolo especial
---		Simbolo especial
--		Simbolo especial
-cin		Palabra reservada
->		Simbolo especial
->		Simbolo especial
->=		Simbolo especial
-<		Simbolo especial
-<		Simbolo especial
-<=		Simbolo especial
-==		Simbolo especial
-!=		Simbolo especial
-int		Palabra reservada
-mas		Identificador
-real		Palabra reservada
-while		Palabra reservada
-do		Palabra reservada
-cin		Palabra reservada
-cout		Palabra reservada
-end		Palabra reservada
-if		Palabra reservada
-until		Palabra reservada
-{		Simbolo especial
-int		Palabra reservada
-x		Identificador
-,		Simbolo especial
-y		Identificador
-,		Simbolo especial
-z		Identificador
-;		Simbolo especial
-real		Palabra reservada
-a		Identificador
-,		Simbolo especial
-b		Identificador
-,		Simbolo especial
-c		Identificador
-;		Simbolo especial
-x		Identificador
-:=		Simbolo especial
-23		Constante numerica entera
-;		Simbolo especial
-y		Identificador
-:=		Simbolo especial
-2		Constante numerica entera
-+3		Constante numerica entera
--1		Constante numerica entera
-;		Simbolo especial
-z		Identificador
-:=		Simbolo especial
-y		Identificador
-+7		Constante numerica entera
-;		Simbolo especial
-a		Identificador
-:=		Simbolo especial
-24.0		Constante numerica real
-+4		Constante numerica entera
--1		Constante numerica entera
-*		Simbolo especial
-3		Constante numerica entera
-/		Simbolo especial
-2		Constante numerica entera
-+34		Constante numerica entera
--1		Constante numerica entera
-;		Simbolo especial
-if		Palabra reservada
-(		Simbolo especial
-2		Constante numerica entera
->		Simbolo especial
-3		Constante numerica entera
-)		Simbolo especial
-y		Identificador
-a		Identificador
-+3		Constante numerica entera
-;		Simbolo especial
-else		Palabra reservada
-if		Palabra reservada
-(		Simbolo especial
-4		Constante numerica entera
->		Simbolo especial
-2		Constante numerica entera
-)		Simbolo especial
-b		Identificador
-3.2		Constante numerica real
-;		Simbolo especial
-else		Palabra reservada
-b		Identificador
-5.0		Constante numerica real
-;		Simbolo especial
-end		Palabra reservada
-;		Simbolo especial
-y		Identificador
-y		Identificador
-+1		Constante numerica entera
-;		Simbolo especial
-end		Palabra reservada
-;		Simbolo especial
-do		Palabra reservada
-y		Identificador
-(		Simbolo especial
-y		Identificador
-+1		Constante numerica entera
-)		Simbolo especial
-*		Simbolo especial
-2		Constante numerica entera
-+1		Constante numerica entera
-;		Simbolo especial
-until		Palabra reservada
-(		Simbolo especial
-y		Identificador
-==		Simbolo especial
-5		Constante numerica entera
-)		Simbolo especial
-;		Simbolo especial
-while		Palabra reservada
-(		Simbolo especial
-y		Identificador
-==		Simbolo especial
-0		Constante numerica entera
-)		Simbolo especial
-{		Simbolo especial
-cout		Palabra reservada
-x		Identificador
-;		Simbolo especial
-}		Simbolo especial
-;		Simbolo especial
-}		Simbolo especial
-esto		Identificador
-es		Identificador
-un		Identificador
-comentario		Identificador
-de		Identificador
-mas		Identificador
-de		Identificador
-una		Identificador
-++		Simbolo especial
-+		Simbolo especial
-*		Simbolo especial
-*		Simbolo especial
-*		Simbolo especial
-*		Simbolo especial
-line		Identificador
-a		Identificador
-*		Simbolo especial
-/		Simbolo especial
-if		Palabra reservada
-ya		Identificador
-se		Identificador
-termino		Identificador
-while		Palabra reservada
+int..........Palabra reservada
+vector..........Identificador
+,..........Simbolo especial
+su..........Identificador
+mas..........Identificador
+,..........Simbolo especial
+res..........Identificador
+tas..........Identificador
+,..........Simbolo especial
+suma1..........Identificador
+,..........Simbolo especial
+suma2..........Identificador
+,..........Simbolo especial
+25..........Constante numerica entera
+ert..........Identificador
+;..........Simbolo especial
+main..........Palabra reservada
+if..........Palabra reservada
+(..........Simbolo especial
+while..........Palabra reservada
+)..........Simbolo especial
+if..........Palabra reservada
++34.34..........Constante numerica real
+34.34..........Constante numerica real
+34..........Constante numerica entera
+-34..........Constante numerica entera
+++..........Operador
++..........Operador
+--..........Operador
+-..........Operador
+cin..........Palabra reservada
+>..........Operador
+>..........Operador
+>=..........Operador
+<..........Operador
+<..........Operador
+<=..........Operador
+==..........Operador
+!=..........Operador
+int..........Palabra reservada
+mas..........Identificador
+real..........Palabra reservada
+while..........Palabra reservada
+do..........Palabra reservada
+cin..........Palabra reservada
+cout..........Palabra reservada
+end..........Palabra reservada
+if..........Palabra reservada
+until..........Palabra reservada
+{..........Simbolo especial
+int..........Palabra reservada
+x..........Identificador
+,..........Simbolo especial
+y..........Identificador
+,..........Simbolo especial
+z..........Identificador
+;..........Simbolo especial
+real..........Palabra reservada
+a..........Identificador
+,..........Simbolo especial
+b..........Identificador
+,..........Simbolo especial
+c..........Identificador
+;..........Simbolo especial
+x..........Identificador
+:=..........Operador
+23..........Constante numerica entera
+;..........Simbolo especial
+y..........Identificador
+:=..........Operador
+2..........Constante numerica entera
++3..........Constante numerica entera
+-1..........Constante numerica entera
+;..........Simbolo especial
+z..........Identificador
+:=..........Operador
+y..........Identificador
++7..........Constante numerica entera
+;..........Simbolo especial
+a..........Identificador
+:=..........Operador
+24.0..........Constante numerica real
++4..........Constante numerica entera
+-1..........Constante numerica entera
+*..........Operador
+3..........Constante numerica entera
+/..........Operador
+2..........Constante numerica entera
++34..........Constante numerica entera
+-1..........Constante numerica entera
+;..........Simbolo especial
+if..........Palabra reservada
+(..........Simbolo especial
+2..........Constante numerica entera
+>..........Operador
+3..........Constante numerica entera
+)..........Simbolo especial
+y..........Identificador
+a..........Identificador
++3..........Constante numerica entera
+;..........Simbolo especial
+else..........Palabra reservada
+if..........Palabra reservada
+(..........Simbolo especial
+4..........Constante numerica entera
+>..........Operador
+2..........Constante numerica entera
+)..........Simbolo especial
+b..........Identificador
+3.2..........Constante numerica real
+;..........Simbolo especial
+else..........Palabra reservada
+b..........Identificador
+5.0..........Constante numerica real
+;..........Simbolo especial
+end..........Palabra reservada
+;..........Simbolo especial
+y..........Identificador
+y..........Identificador
++1..........Constante numerica entera
+;..........Simbolo especial
+end..........Palabra reservada
+;..........Simbolo especial
+do..........Palabra reservada
+y..........Identificador
+(..........Simbolo especial
+y..........Identificador
++1..........Constante numerica entera
+)..........Simbolo especial
+*..........Operador
+2..........Constante numerica entera
++1..........Constante numerica entera
+;..........Simbolo especial
+until..........Palabra reservada
+(..........Simbolo especial
+y..........Identificador
+==..........Operador
+5..........Constante numerica entera
+)..........Simbolo especial
+;..........Simbolo especial
+while..........Palabra reservada
+(..........Simbolo especial
+y..........Identificador
+==..........Operador
+0..........Constante numerica entera
+)..........Simbolo especial
+{..........Simbolo especial
+cout..........Palabra reservada
+x..........Identificador
+;..........Simbolo especial
+}..........Simbolo especial
+;..........Simbolo especial
+}..........Simbolo especial
+esto..........Identificador
+es..........Identificador
+un..........Identificador
+comentario..........Identificador
+de..........Identificador
+mas..........Identificador
+de..........Identificador
+una..........Identificador
+++..........Operador
++..........Operador
+*..........Operador
+*..........Operador
+*..........Operador
+*..........Operador
+line..........Identificador
+a..........Identificador
+*..........Operador
+/..........Operador
+if..........Palabra reservada
+ya..........Identificador
+se..........Identificador
+termino..........Identificador
+while..........Palabra reservada

@@ -13,7 +13,6 @@ namespace Speck
         internal string RutaArchivo = string.Empty;
 
         internal string CarpetaInicial = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        internal string RutaAnalizadorLexico = Path.Combine(Directory.GetCurrentDirectory(), @"lexico.py");
 
         internal const string ReservadasUno = @"main if then else end do while repeat until cin cout";
         internal const string ReservadasDos = @"real int boolean";
@@ -24,7 +23,7 @@ namespace Speck
         internal const string Mensaje = @"No has guardado tu archivo. ¿Desea guardarlo?";
         internal const string Titulo = @"No soy adivino ¬¬";
 
-        internal const string TituloLexico = @"¡Está en blanco! ¡Mi compilador!";
+        internal const string TituloLexico = @"¡Estúpida! ¡Mi compilador!";
         internal const string MensajeLexico = @"¡Debes hacer algo para que yo pueda hacer algo!";
 
         internal const string Python = @"C:\Python27\python.exe";
@@ -47,10 +46,6 @@ namespace Speck
         {
             InitializeComponent();
 
-            //Full screen, como para juegos
-            /*WindowState = FormWindowState.Maximized;
-            FormBorderStyle = FormBorderStyle.None;*/
-
             StartPosition = FormStartPosition.Manual;
             Location = new Point(0, 0);
             Size = Screen.PrimaryScreen.WorkingArea.Size;
@@ -64,7 +59,7 @@ namespace Speck
             cuadroEditor.SetSelectionBackColor(true, Color.DodgerBlue);
             cuadroEditor.SetSelectionForeColor(true, Color.White);
             cuadroEditor.StyleClearAll();
-            
+
             cuadroEditor.Styles[Style.Cpp.Default].ForeColor = Color.Black;
             cuadroEditor.Styles[Style.Cpp.Comment].ForeColor = Color.LightSteelBlue;
             cuadroEditor.Styles[Style.Cpp.CommentLine].ForeColor = Color.LightSteelBlue;
@@ -88,6 +83,9 @@ namespace Speck
             cuadroEditor.Styles[Style.LineNumber].ForeColor = Color.White;
             cuadroEditor.Styles[Style.LineNumber].BackColor = Color.FromArgb(0, 88, 191, 255);
             cuadroEditor.Margins[0].Type = MarginType.Number;
+
+            textboxLexicoChido.SelectAll();
+            textboxLexicoChido.SelectionAlignment = HorizontalAlignment.Right;
         }
 
         private void Speck_FormClosing(object sender, FormClosingEventArgs e)
@@ -337,7 +335,7 @@ namespace Speck
 
         public void ComandoPython(string argumentos)
         {
-            using (Process proceso = new Process())
+            using (var proceso = new Process())
             {
                 proceso.StartInfo = new ProcessStartInfo(Python, argumentos)
                 {
@@ -346,7 +344,7 @@ namespace Speck
                     CreateNoWindow = true
                 };
                 proceso.Start();
-                string salida = proceso.StandardOutput.ReadToEnd();
+                var salida = proceso.StandardOutput.ReadToEnd();
                 proceso.WaitForExit();
                 Console.WriteLine(salida);
                 Console.ReadLine();
@@ -356,9 +354,22 @@ namespace Speck
         public void Lexico()
         {
             GuardarArchivo();
-            if (!RutaArchivo.Equals(string.Empty))
+            if (RutaArchivo.Equals(string.Empty))
             {
-                ComandoPython(RutaAnalizadorLexico + " " + RutaArchivo);
+                MessageBox.Show(this, MensajeLexico, TituloLexico, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var rutaAnalizadorLexico = Path.Combine(Directory.GetCurrentDirectory(), @"lexico.py");
+                if (rutaAnalizadorLexico.Contains(" "))
+                    rutaAnalizadorLexico = $"\"{rutaAnalizadorLexico}\"";
+
+                string rutaArchivoTemp;
+                if (RutaArchivo.Contains(" "))
+                    rutaArchivoTemp = $"\"{RutaArchivo}\"";
+                else
+                    rutaArchivoTemp = RutaArchivo;
+                ComandoPython(rutaAnalizadorLexico + " " + rutaArchivoTemp);
                 var rutaLexico = Path.Combine(Directory.GetCurrentDirectory(), DirectorioLexico, ArchivoLexico);
                 var rutaErrorLexico = Path.Combine(Directory.GetCurrentDirectory(), DirectorioLexico,
                     ArchivoErroresLexico);

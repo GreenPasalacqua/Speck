@@ -36,16 +36,16 @@ def menor_mayor():
     crea()
     if i < len(codigoFuente) and codigoFuente[i] == '=':
         concatena()
-        lexemas.append(lexema_temp + "\t\tOperador")
+        lexemas.append(lexema_temp + "..........Operador")
     else:
-        lexemas.append(lexema_temp + "\t\tOperador")
+        lexemas.append(lexema_temp + "..........Operador")
         otro()
 
 def simbolo_dos_caracteres():
     crea()
     if i < len(codigoFuente) and codigoFuente[i] == '=':
         concatena()
-        lexemas.append(lexema_temp + "\t\tOperador")
+        lexemas.append(lexema_temp + "..........Operador")
     else:
         errores.append(lexema_temp + " Ln " + str(contador_linea) + " Col " + str(contador_columna - 1))
 
@@ -58,10 +58,10 @@ def constante_numerica():
             concatena()
             while i < len(codigoFuente) and str.isdigit(codigoFuente[i]):
                 concatena()
-            lexemas.append(lexema_temp + "\t\tConstante numerica real")
+            lexemas.append(lexema_temp + "..........Constante numerica real")
             otro()
     else:
-        lexemas.append(lexema_temp + "\t\tConstante numerica entera")
+        lexemas.append(lexema_temp + "..........Constante numerica entera")
         otro()
 
 def mas_menos():
@@ -69,12 +69,12 @@ def mas_menos():
     crea()
     if i < len(codigoFuente) and codigoFuente[i] == simbolo_temporal:
         concatena()
-        lexemas.append(lexema_temp + "\t\tOperador")
+        lexemas.append(lexema_temp + "..........Operador")
     elif i < len(codigoFuente) and str.isdigit(codigoFuente[i]):
         concatena()
         constante_numerica()
     else:
-        lexemas.append(lexema_temp + "\t\tOperador")
+        lexemas.append(lexema_temp + "..........Operador")
         otro()
 
 while i < len(codigoFuente):
@@ -90,9 +90,9 @@ while i < len(codigoFuente):
         while i < len(codigoFuente) and str.isalnum(codigoFuente[i]):
             concatena()
         if lexema_temp in RESERVADAS:
-            lexemas.append(lexema_temp + "\t\tPalabra reservada")
+            lexemas.append(lexema_temp + "..........Palabra reservada")
         else:
-            lexemas.append(lexema_temp + "\t\tIdentificador")
+            lexemas.append(lexema_temp + "..........Identificador")
         otro()
     elif codigoFuente[i] == '+' or codigoFuente[i] == '-':
         mas_menos()
@@ -117,14 +117,14 @@ while i < len(codigoFuente):
             while i < len(codigoFuente) and codigoFuente[i] != '\n':
                 avanza()
         else:
-            lexemas.append(lexema_temp + "\t\tOperador")
+            lexemas.append(lexema_temp + "..........Operador")
             otro()
     elif codigoFuente[i] == '*' or codigoFuente[i] == '%':
         crea()
-        lexemas.append(lexema_temp + "\t\tOperador")
+        lexemas.append(lexema_temp + "..........Operador")
     elif codigoFuente[i] == '(' or codigoFuente[i] == ')' or codigoFuente[i] == '{' or codigoFuente[i] == '}' or codigoFuente[i] == ',' or codigoFuente[i] == ';':
         crea()
-        lexemas.append(lexema_temp + "\t\tSimbolo especial")
+        lexemas.append(lexema_temp + "..........Simbolo especial")
     elif codigoFuente[i] == '<' or codigoFuente[i] == '>':
         menor_mayor()
     elif codigoFuente[i] == '=' or codigoFuente[i] == '!' or codigoFuente[i] == ':':

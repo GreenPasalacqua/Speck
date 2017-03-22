@@ -9,3 +9,14 @@ C:\Users\asd\Documents\GitHub\Speck\Speck\obj\Debug\Speck.Properties.Resources.r
 C:\Users\asd\Documents\GitHub\Speck\Speck\obj\Debug\Speck.csproj.GenerateResource.Cache
 C:\Users\asd\Documents\GitHub\Speck\Speck\obj\Debug\Speck.exe
 C:\Users\asd\Documents\GitHub\Speck\Speck\obj\Debug\Speck.pdb
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\bin\Debug\Speck.exe.config
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\obj\Debug\Speck.exe
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\obj\Debug\Speck.pdb
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\bin\Debug\Speck.exe
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\bin\Debug\Speck.pdb
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\bin\Debug\ScintillaNET.dll
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\bin\Debug\ScintillaNET.xml
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\obj\Debug\Speck.csprojResolveAssemblyReference.cache
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\obj\Debug\Speck.Speck.resources
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\obj\Debug\Speck.Properties.Resources.resources
+C:\Users\asd\Desktop\lo que sea\Speck\Speck\obj\Debug\Speck.csproj.GenerateResource.Cache
