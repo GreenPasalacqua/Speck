@@ -36,16 +36,16 @@ def menor_mayor():
     crea()
     if i < len(codigoFuente) and codigoFuente[i] == '=':
         concatena()
-        lexemas.append(lexema_temp + "\t\tSimbolo especial")
+        lexemas.append(lexema_temp + "\t\tOperador")
     else:
-        lexemas.append(lexema_temp + "\t\tSimbolo especial")
+        lexemas.append(lexema_temp + "\t\tOperador")
         otro()
 
 def simbolo_dos_caracteres():
     crea()
     if i < len(codigoFuente) and codigoFuente[i] == '=':
         concatena()
-        lexemas.append(lexema_temp + "\t\tSimbolo especial")
+        lexemas.append(lexema_temp + "\t\tOperador")
     else:
         errores.append(lexema_temp + " Ln " + str(contador_linea) + " Col " + str(contador_columna - 1))
 
@@ -69,12 +69,12 @@ def mas_menos():
     crea()
     if i < len(codigoFuente) and codigoFuente[i] == simbolo_temporal:
         concatena()
-        lexemas.append(lexema_temp + "\t\tSimbolo especial")
+        lexemas.append(lexema_temp + "\t\tOperador")
     elif i < len(codigoFuente) and str.isdigit(codigoFuente[i]):
         concatena()
         constante_numerica()
     else:
-        lexemas.append(lexema_temp + "\t\tSimbolo especial")
+        lexemas.append(lexema_temp + "\t\tOperador")
         otro()
 
 while i < len(codigoFuente):
@@ -117,10 +117,12 @@ while i < len(codigoFuente):
             while i < len(codigoFuente) and codigoFuente[i] != '\n':
                 avanza()
         else:
-            lexemas.append(lexema_temp + "\t\tSimbolo especial")
+            lexemas.append(lexema_temp + "\t\tOperador")
             otro()
-    elif codigoFuente[i] == '*' or codigoFuente[i] == '%' or codigoFuente[i] == '(' or codigoFuente[i] == ')' or codigoFuente[i] == '{' or codigoFuente[i] == '}'\
-            or codigoFuente[i] == ',' or codigoFuente[i] == ';':
+    elif codigoFuente[i] == '*' or codigoFuente[i] == '%':
+        crea()
+        lexemas.append(lexema_temp + "\t\tOperador")
+    elif codigoFuente[i] == '(' or codigoFuente[i] == ')' or codigoFuente[i] == '{' or codigoFuente[i] == '}' or codigoFuente[i] == ',' or codigoFuente[i] == ';':
         crea()
         lexemas.append(lexema_temp + "\t\tSimbolo especial")
     elif codigoFuente[i] == '<' or codigoFuente[i] == '>':

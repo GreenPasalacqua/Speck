@@ -37,6 +37,16 @@ cin		Palabra reservada
 <=		Simbolo especial
 ==		Simbolo especial
 !=		Simbolo especial
+int		Palabra reservada
+mas		Identificador
+real		Palabra reservada
+while		Palabra reservada
+do		Palabra reservada
+cin		Palabra reservada
+cout		Palabra reservada
+end		Palabra reservada
+if		Palabra reservada
+until		Palabra reservada
 {		Simbolo especial
 int		Palabra reservada
 x		Identificador
@@ -53,18 +63,22 @@ b		Identificador
 c		Identificador
 ;		Simbolo especial
 x		Identificador
+:=		Simbolo especial
 23		Constante numerica entera
 ;		Simbolo especial
 y		Identificador
+:=		Simbolo especial
 2		Constante numerica entera
 +3		Constante numerica entera
 -1		Constante numerica entera
 ;		Simbolo especial
 z		Identificador
+:=		Simbolo especial
 y		Identificador
 +7		Constante numerica entera
 ;		Simbolo especial
 a		Identificador
+:=		Simbolo especial
 24.0		Constante numerica real
 +4		Constante numerica entera
 -1		Constante numerica entera
@@ -137,3 +151,26 @@ x		Identificador
 }		Simbolo especial
 ;		Simbolo especial
 }		Simbolo especial
+esto		Identificador
+es		Identificador
+un		Identificador
+comentario		Identificador
+de		Identificador
+mas		Identificador
+de		Identificador
+una		Identificador
+++		Simbolo especial
++		Simbolo especial
+*		Simbolo especial
+*		Simbolo especial
+*		Simbolo especial
+*		Simbolo especial
+line		Identificador
+a		Identificador
+*		Simbolo especial
+/		Simbolo especial
+if		Palabra reservada
+ya		Identificador
+se		Identificador
+termino		Identificador
+while		Palabra reservada
