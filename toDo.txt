@@ -1,9 +1,11 @@
-iconos
-iconos tema osc
+actualizar scintilla
+reducir código
+iconos barra
 iconos menús
 splash screen
 menu clic derecho
 temas
+custom
 instalador/iconos archivos
 explorador a un costado
 pestañas
