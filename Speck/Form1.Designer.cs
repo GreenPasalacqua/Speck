@@ -37,12 +37,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textboxLexicoChido = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.treeviewSintacticoChido = new System.Windows.Forms.TreeView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textboxErrorLexico = new System.Windows.Forms.RichTextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.textboxErrorSintactico = new System.Windows.Forms.RichTextBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
@@ -99,8 +101,10 @@
             this.splitContainer2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.barraEstado.SuspendLayout();
             this.barraMenu.SuspendLayout();
             this.barraBotones.SuspendLayout();
@@ -144,7 +148,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
             this.splitContainer1.Size = new System.Drawing.Size(1710, 868);
-            this.splitContainer1.SplitterDistance = 674;
+            this.splitContainer1.SplitterDistance = 673;
             this.splitContainer1.SplitterWidth = 8;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -162,7 +166,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer2.Size = new System.Drawing.Size(1710, 674);
+            this.splitContainer2.Size = new System.Drawing.Size(1710, 673);
             this.splitContainer2.SplitterDistance = 1162;
             this.splitContainer2.SplitterWidth = 8;
             this.splitContainer2.TabIndex = 0;
@@ -170,11 +174,12 @@
             // cuadroEditor
             // 
             this.cuadroEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cuadroEditor.IndentationGuides = ScintillaNET.IndentView.LookForward;
             this.cuadroEditor.Location = new System.Drawing.Point(0, 0);
             this.cuadroEditor.Margin = new System.Windows.Forms.Padding(4);
             this.cuadroEditor.Name = "cuadroEditor";
             this.cuadroEditor.ScrollWidth = 1;
-            this.cuadroEditor.Size = new System.Drawing.Size(1162, 674);
+            this.cuadroEditor.Size = new System.Drawing.Size(1162, 673);
             this.cuadroEditor.TabIndex = 0;
             this.cuadroEditor.SavePointLeft += new System.EventHandler<System.EventArgs>(this.cuadroEditor_SavePointLeft);
             this.cuadroEditor.SavePointReached += new System.EventHandler<System.EventArgs>(this.cuadroEditor_SavePointReached);
@@ -193,7 +198,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(540, 674);
+            this.tabControl1.Size = new System.Drawing.Size(540, 673);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -203,7 +208,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage1.Size = new System.Drawing.Size(524, 624);
+            this.tabPage1.Size = new System.Drawing.Size(524, 623);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lexíco";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -216,20 +221,34 @@
             this.textboxLexicoChido.ForeColor = System.Drawing.Color.White;
             this.textboxLexicoChido.Location = new System.Drawing.Point(6, 6);
             this.textboxLexicoChido.Name = "textboxLexicoChido";
-            this.textboxLexicoChido.Size = new System.Drawing.Size(512, 612);
+            this.textboxLexicoChido.Size = new System.Drawing.Size(512, 611);
             this.textboxLexicoChido.TabIndex = 0;
             this.textboxLexicoChido.Text = "";
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.treeviewSintacticoChido);
             this.tabPage2.Location = new System.Drawing.Point(8, 42);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage2.Size = new System.Drawing.Size(524, 621);
+            this.tabPage2.Size = new System.Drawing.Size(524, 623);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sintáctico";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // treeviewSintacticoChido
+            // 
+            this.treeviewSintacticoChido.BackColor = System.Drawing.Color.Black;
+            this.treeviewSintacticoChido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeviewSintacticoChido.Font = new System.Drawing.Font("Meslo LG S", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeviewSintacticoChido.ForeColor = System.Drawing.Color.White;
+            this.treeviewSintacticoChido.Location = new System.Drawing.Point(6, 6);
+            this.treeviewSintacticoChido.Name = "treeviewSintacticoChido";
+            this.treeviewSintacticoChido.PathSeparator = "|";
+            this.treeviewSintacticoChido.ShowPlusMinus = false;
+            this.treeviewSintacticoChido.Size = new System.Drawing.Size(512, 611);
+            this.treeviewSintacticoChido.TabIndex = 0;
             // 
             // tabPage5
             // 
@@ -237,7 +256,7 @@
             this.tabPage5.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage5.Size = new System.Drawing.Size(524, 621);
+            this.tabPage5.Size = new System.Drawing.Size(524, 623);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Semántico";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -248,7 +267,7 @@
             this.tabPage6.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage6.Size = new System.Drawing.Size(524, 621);
+            this.tabPage6.Size = new System.Drawing.Size(524, 623);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Código Intermedio";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -266,7 +285,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1710, 186);
+            this.tabControl2.Size = new System.Drawing.Size(1710, 187);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage3
@@ -276,7 +295,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage3.Size = new System.Drawing.Size(1694, 136);
+            this.tabPage3.Size = new System.Drawing.Size(1694, 137);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Errores Léxicos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -289,20 +308,33 @@
             this.textboxErrorLexico.ForeColor = System.Drawing.Color.OrangeRed;
             this.textboxErrorLexico.Location = new System.Drawing.Point(6, 6);
             this.textboxErrorLexico.Name = "textboxErrorLexico";
-            this.textboxErrorLexico.Size = new System.Drawing.Size(1682, 124);
+            this.textboxErrorLexico.Size = new System.Drawing.Size(1682, 125);
             this.textboxErrorLexico.TabIndex = 0;
             this.textboxErrorLexico.Text = "";
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.textboxErrorSintactico);
             this.tabPage4.Location = new System.Drawing.Point(8, 42);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage4.Size = new System.Drawing.Size(1696, 134);
+            this.tabPage4.Size = new System.Drawing.Size(1694, 137);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Errores Sintácticos";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // textboxErrorSintactico
+            // 
+            this.textboxErrorSintactico.BackColor = System.Drawing.Color.Black;
+            this.textboxErrorSintactico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textboxErrorSintactico.Font = new System.Drawing.Font("Meslo LG S", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxErrorSintactico.ForeColor = System.Drawing.Color.OrangeRed;
+            this.textboxErrorSintactico.Location = new System.Drawing.Point(6, 6);
+            this.textboxErrorSintactico.Name = "textboxErrorSintactico";
+            this.textboxErrorSintactico.Size = new System.Drawing.Size(1682, 125);
+            this.textboxErrorSintactico.TabIndex = 1;
+            this.textboxErrorSintactico.Text = "";
             // 
             // tabPage7
             // 
@@ -310,7 +342,7 @@
             this.tabPage7.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage7.Size = new System.Drawing.Size(1696, 134);
+            this.tabPage7.Size = new System.Drawing.Size(1694, 137);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Errores Semánticos";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -321,7 +353,7 @@
             this.tabPage8.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage8.Size = new System.Drawing.Size(1696, 134);
+            this.tabPage8.Size = new System.Drawing.Size(1694, 137);
             this.tabPage8.TabIndex = 3;
             this.tabPage8.Text = "Tabla de Símbolos";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -332,7 +364,7 @@
             this.tabPage9.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage9.Size = new System.Drawing.Size(1696, 134);
+            this.tabPage9.Size = new System.Drawing.Size(1694, 137);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "Salida";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -402,7 +434,7 @@
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(285, 38);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(284, 38);
             this.nuevoToolStripMenuItem.Text = "&Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
@@ -410,40 +442,40 @@
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
             this.abrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(285, 38);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(284, 38);
             this.abrirToolStripMenuItem.Text = "&Abrir";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(282, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(281, 6);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             this.guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(285, 38);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(284, 38);
             this.guardarToolStripMenuItem.Text = "&Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // guardarComoToolStripMenuItem
             // 
             this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(285, 38);
+            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(284, 38);
             this.guardarComoToolStripMenuItem.Text = "Guardar &Como...";
             this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.guardarComoToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(282, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(281, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(285, 38);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(284, 38);
             this.salirToolStripMenuItem.Text = "&Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -466,7 +498,7 @@
             // 
             this.deshacerToolStripMenuItem.Name = "deshacerToolStripMenuItem";
             this.deshacerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(363, 38);
+            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(362, 38);
             this.deshacerToolStripMenuItem.Text = "&Deshacer";
             this.deshacerToolStripMenuItem.Click += new System.EventHandler(this.deshacerToolStripMenuItem_Click);
             // 
@@ -474,20 +506,20 @@
             // 
             this.rehacerToolStripMenuItem.Name = "rehacerToolStripMenuItem";
             this.rehacerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.rehacerToolStripMenuItem.Size = new System.Drawing.Size(363, 38);
+            this.rehacerToolStripMenuItem.Size = new System.Drawing.Size(362, 38);
             this.rehacerToolStripMenuItem.Text = "&Rehacer";
             this.rehacerToolStripMenuItem.Click += new System.EventHandler(this.rehacerToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(360, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(359, 6);
             // 
             // cortarToolStripMenuItem
             // 
             this.cortarToolStripMenuItem.Name = "cortarToolStripMenuItem";
             this.cortarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cortarToolStripMenuItem.Size = new System.Drawing.Size(363, 38);
+            this.cortarToolStripMenuItem.Size = new System.Drawing.Size(362, 38);
             this.cortarToolStripMenuItem.Text = "&Cortar";
             this.cortarToolStripMenuItem.Click += new System.EventHandler(this.cortarToolStripMenuItem_Click);
             // 
@@ -495,7 +527,7 @@
             // 
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
             this.copiarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(363, 38);
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(362, 38);
             this.copiarToolStripMenuItem.Text = "C&opiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
@@ -503,20 +535,20 @@
             // 
             this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
             this.pegarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(363, 38);
+            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(362, 38);
             this.pegarToolStripMenuItem.Text = "&Pegar";
             this.pegarToolStripMenuItem.Click += new System.EventHandler(this.pegarToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(360, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(359, 6);
             // 
             // seleccionarTodoToolStripMenuItem
             // 
             this.seleccionarTodoToolStripMenuItem.Name = "seleccionarTodoToolStripMenuItem";
             this.seleccionarTodoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.seleccionarTodoToolStripMenuItem.Size = new System.Drawing.Size(363, 38);
+            this.seleccionarTodoToolStripMenuItem.Size = new System.Drawing.Size(362, 38);
             this.seleccionarTodoToolStripMenuItem.Text = "Seleccionar &Todo";
             this.seleccionarTodoToolStripMenuItem.Click += new System.EventHandler(this.seleccionarTodoToolStripMenuItem_Click);
             // 
@@ -535,31 +567,32 @@
             // léxicoToolStripMenuItem
             // 
             this.léxicoToolStripMenuItem.Name = "léxicoToolStripMenuItem";
-            this.léxicoToolStripMenuItem.Size = new System.Drawing.Size(217, 38);
+            this.léxicoToolStripMenuItem.Size = new System.Drawing.Size(216, 38);
             this.léxicoToolStripMenuItem.Text = "&Léxico";
             this.léxicoToolStripMenuItem.Click += new System.EventHandler(this.léxicoToolStripMenuItem_Click);
             // 
             // sintácticoToolStripMenuItem
             // 
             this.sintácticoToolStripMenuItem.Name = "sintácticoToolStripMenuItem";
-            this.sintácticoToolStripMenuItem.Size = new System.Drawing.Size(217, 38);
+            this.sintácticoToolStripMenuItem.Size = new System.Drawing.Size(216, 38);
             this.sintácticoToolStripMenuItem.Text = "&Sintáctico";
+            this.sintácticoToolStripMenuItem.Click += new System.EventHandler(this.sintácticoToolStripMenuItem_Click);
             // 
             // semánticoToolStripMenuItem
             // 
             this.semánticoToolStripMenuItem.Name = "semánticoToolStripMenuItem";
-            this.semánticoToolStripMenuItem.Size = new System.Drawing.Size(217, 38);
+            this.semánticoToolStripMenuItem.Size = new System.Drawing.Size(216, 38);
             this.semánticoToolStripMenuItem.Text = "Se&mántico";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(214, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(213, 6);
             // 
             // compilarToolStripMenuItem1
             // 
             this.compilarToolStripMenuItem1.Name = "compilarToolStripMenuItem1";
-            this.compilarToolStripMenuItem1.Size = new System.Drawing.Size(217, 38);
+            this.compilarToolStripMenuItem1.Size = new System.Drawing.Size(216, 38);
             this.compilarToolStripMenuItem1.Text = "Com&pilar";
             // 
             // barraBotones
@@ -682,6 +715,7 @@
             this.botonSintactico.Size = new System.Drawing.Size(36, 36);
             this.botonSintactico.Text = "botonSintactico";
             this.botonSintactico.ToolTipText = "Sintáctico";
+            this.botonSintactico.Click += new System.EventHandler(this.botonSintactico_Click);
             // 
             // botonSemantico
             // 
@@ -731,8 +765,10 @@
             this.splitContainer2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.barraEstado.ResumeLayout(false);
             this.barraEstado.PerformLayout();
             this.barraMenu.ResumeLayout(false);
@@ -802,6 +838,8 @@
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.RichTextBox textboxLexicoChido;
         private System.Windows.Forms.RichTextBox textboxErrorLexico;
+        private System.Windows.Forms.RichTextBox textboxErrorSintactico;
+        private System.Windows.Forms.TreeView treeviewSintacticoChido;
     }
 }
 

@@ -1,0 +1,216 @@
+main..........Palabra reservada
+{..........Simbolo especial
+int..........Palabra reservada
+x..........Identificador
+,..........Simbolo especial
+y..........Identificador
+,..........Simbolo especial
+z..........Identificador
+;..........Simbolo especial
+real..........Palabra reservada
+a..........Identificador
+,..........Simbolo especial
+b..........Identificador
+,..........Simbolo especial
+c..........Identificador
+;..........Simbolo especial
+x..........Identificador
+:=..........Operador
+23..........Constante numerica entera
+;..........Simbolo especial
+y..........Identificador
+:=..........Operador
+2..........Constante numerica entera
++..........Operador
+3..........Constante numerica entera
+-..........Operador
+1..........Constante numerica entera
+;..........Simbolo especial
+z..........Identificador
+:=..........Operador
+y..........Identificador
++..........Operador
+7..........Constante numerica entera
+;..........Simbolo especial
+x..........Identificador
+:=..........Operador
+(..........Simbolo especial
+5..........Constante numerica entera
+-..........Operador
+3..........Constante numerica entera
+)..........Simbolo especial
+*..........Operador
+(..........Simbolo especial
+8..........Constante numerica entera
+/..........Operador
+2..........Constante numerica entera
+)..........Simbolo especial
+;..........Simbolo especial
+y..........Identificador
+:=..........Operador
+5..........Constante numerica entera
++..........Operador
+3..........Constante numerica entera
+-..........Operador
+2..........Constante numerica entera
+*..........Operador
+4..........Constante numerica entera
+/..........Operador
+7..........Constante numerica entera
+-..........Operador
+9..........Constante numerica entera
+;..........Simbolo especial
+z..........Identificador
+:=..........Operador
+8..........Constante numerica entera
+/..........Operador
+2..........Constante numerica entera
++..........Operador
+15..........Constante numerica entera
+*..........Operador
+4..........Constante numerica entera
+;..........Simbolo especial
+y..........Identificador
+:=..........Operador
+14.54..........Constante numerica real
+;..........Simbolo especial
+a..........Identificador
+:=..........Operador
+24.0..........Constante numerica real
++..........Operador
+4..........Constante numerica entera
+-..........Operador
+1..........Constante numerica entera
+*..........Operador
+3..........Constante numerica entera
+/..........Operador
+2..........Constante numerica entera
++..........Operador
+34..........Constante numerica entera
+-..........Operador
+1..........Constante numerica entera
+;..........Simbolo especial
+if..........Palabra reservada
+(..........Simbolo especial
+2..........Constante numerica entera
+>..........Operador
+3..........Constante numerica entera
+)..........Simbolo especial
+then..........Palabra reservada
+{..........Simbolo especial
+y..........Identificador
+:=..........Operador
+a..........Identificador
++..........Operador
+3..........Constante numerica entera
+;..........Simbolo especial
+}..........Simbolo especial
+else..........Palabra reservada
+{..........Simbolo especial
+if..........Palabra reservada
+(..........Simbolo especial
+4..........Constante numerica entera
+<..........Operador
+2..........Constante numerica entera
+)..........Simbolo especial
+then..........Palabra reservada
+{..........Simbolo especial
+b..........Identificador
+:=..........Operador
+3.2..........Constante numerica real
+;..........Simbolo especial
+}..........Simbolo especial
+else..........Palabra reservada
+{..........Simbolo especial
+b..........Identificador
+:=..........Operador
+5.0..........Constante numerica real
+;..........Simbolo especial
+}..........Simbolo especial
+y..........Identificador
+:=..........Operador
+y..........Identificador
++..........Operador
+1..........Constante numerica entera
+;..........Simbolo especial
+}..........Simbolo especial
+a..........Identificador
+++..........Operador
+;..........Simbolo especial
+b..........Identificador
+--..........Operador
+;..........Simbolo especial
+repeat..........Palabra reservada
+{..........Simbolo especial
+y..........Identificador
+:=..........Operador
+(..........Simbolo especial
+y..........Identificador
++..........Operador
+1..........Constante numerica entera
+)..........Simbolo especial
+*..........Operador
+2..........Constante numerica entera
++..........Operador
+1..........Constante numerica entera
+;..........Simbolo especial
+if..........Palabra reservada
+(..........Simbolo especial
+a..........Identificador
+==..........Operador
+b..........Identificador
+)..........Simbolo especial
+then..........Palabra reservada
+{..........Simbolo especial
+a..........Identificador
+:=..........Operador
+a..........Identificador
++..........Operador
+1..........Constante numerica entera
+;..........Simbolo especial
+}..........Simbolo especial
+else..........Palabra reservada
+{..........Simbolo especial
+b..........Identificador
+:=..........Operador
+b..........Identificador
++..........Operador
+1..........Constante numerica entera
+;..........Simbolo especial
+}..........Simbolo especial
+}..........Simbolo especial
+until..........Palabra reservada
+(..........Simbolo especial
+y..........Identificador
+==..........Operador
+5..........Constante numerica entera
+)..........Simbolo especial
+;..........Simbolo especial
+while..........Palabra reservada
+(..........Simbolo especial
+y..........Identificador
+==..........Operador
+0..........Constante numerica entera
+)..........Simbolo especial
+{..........Simbolo especial
+cout..........Palabra reservada
+x..........Identificador
+;..........Simbolo especial
+if..........Palabra reservada
+(..........Simbolo especial
+6..........Constante numerica entera
+!=..........Operador
+a..........Identificador
+)..........Simbolo especial
+then..........Palabra reservada
+{..........Simbolo especial
+a..........Identificador
+:=..........Operador
+5..........Constante numerica entera
+;..........Simbolo especial
+cin..........Palabra reservada
+x..........Identificador
+;..........Simbolo especial
+}..........Simbolo especial
+}..........Simbolo especial
+}..........Simbolo especial

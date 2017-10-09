@@ -14,22 +14,34 @@ namespace Speck
 
         internal string CarpetaInicial = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
-        internal const string ReservadasUno = @"main if then else end do while repeat until cin cout";
+        internal const string ReservadasUno = @"main if then else repeat while until cin cout";
         internal const string ReservadasDos = @"real int boolean";
 
         internal const string Separador = @" - ";
         internal const string CaracterNoGuardado = @"*";
 
+        internal const string PrincipioRutaNodo = @"('|";
+        internal const string FinRutaNodo = @"')";
+        internal const char SeparadorRutaNodo = '|';
+        internal const char SeparadorLlave = '#';
+
         internal const string Mensaje = @"No has guardado tu archivo. ¿Desea guardarlo?";
         internal const string Titulo = @"No soy adivino ¬¬";
 
-        internal const string TituloLexico = @"¡Estúpida! ¡Mi compilador!";
-        internal const string MensajeLexico = @"¡Debes hacer algo para que yo pueda hacer algo!";
+        internal const string TituloArchivoVacio = @"¡Mi compilador!";
+        internal const string MensajeArchivoVacio = @"¡Debes hacer algo para que yo pueda hacer algo!";
+
+        internal const string TituloErroresLexicos = @"Checa tu lexema (¿No sabes escribir o qué pedo?)";
+        internal const string MensajeErroresLexicos = @"Aún hay errores léxicos :C";
 
         internal const string Python = @"C:\Python27\python.exe";
         internal const string DirectorioLexico = @"Lexico";
+        internal const string DirectorioSintactico = @"Sintactico";
         internal const string ArchivoLexico = @"lexemas.txt";
+        internal const string ArchivoSintactico = @"arbol.txt";
         internal const string ArchivoErroresLexico = @"errores_lexicos.txt";
+        internal const string ArchivoErroresSintactico = @"errores_sintacticos.txt";
+        internal const string ArchivoLexemasInterno = @"lexemas_interno.txt";
 
         internal StringBuilder SbTitulo = new StringBuilder();
 
@@ -52,6 +64,8 @@ namespace Speck
 
             textboxLexicoChido.ReadOnly = true;
             textboxErrorLexico.ReadOnly = true;
+
+            textboxErrorSintactico.ReadOnly = true;
 
             cuadroEditor.StyleResetDefault();
             cuadroEditor.Styles[Style.Default].Font = "Meslo LG S Regular";
@@ -128,8 +142,12 @@ namespace Speck
             SbTitulo.Append(Name);
             Text = SbTitulo.ToString();
             cuadroEditor.EmptyUndoBuffer();
+
             textboxLexicoChido.Text = string.Empty;
             textboxErrorLexico.Text = string.Empty;
+
+            treeviewSintacticoChido.Nodes.Clear();
+            textboxErrorSintactico.Text = string.Empty;
         }
 
         public void AbrirArchivo()
@@ -150,7 +168,7 @@ namespace Speck
 
             var openDeGuindou = new OpenFileDialog
             {
-                Filter = @"Prru (*.prru)|*.prru|Todos los archivos|*.*",
+                Filter = @"Todos los archivos|*.*",
                 InitialDirectory = CarpetaInicial
             };
             if (openDeGuindou.ShowDialog() == DialogResult.OK)
@@ -164,10 +182,15 @@ namespace Speck
                 SbTitulo.Clear();
                 SbTitulo.Append(Name).Append(Separador).Append(Path.GetFileNameWithoutExtension(RutaArchivo));
                 Text = SbTitulo.ToString();
+
+                cuadroEditor.EmptyUndoBuffer();
+
+                textboxLexicoChido.Text = string.Empty;
+                textboxErrorLexico.Text = string.Empty;
+
+                treeviewSintacticoChido.Nodes.Clear();
+                textboxErrorSintactico.Text = string.Empty;
             }
-            cuadroEditor.EmptyUndoBuffer();
-            textboxLexicoChido.Text = string.Empty;
-            textboxErrorLexico.Text = string.Empty;
         }
 
         public void GuardarArchivo()
@@ -351,12 +374,40 @@ namespace Speck
             }
         }
 
-        public void Lexico()
+        public void GenerarArbol(string rutaArbol)
+        {
+            var lineas = File.ReadAllLines(rutaArbol);
+
+            var raiz = new TreeNode();
+            foreach (var ruta in lineas)
+            {
+                var desde = ruta.IndexOf(PrincipioRutaNodo, StringComparison.Ordinal) + PrincipioRutaNodo.Length;
+                var hasta = ruta.LastIndexOf(FinRutaNodo, StringComparison.Ordinal);
+                var cadenaRutaNodos = ruta.Substring(desde, hasta - desde);
+
+                var nodo = raiz;
+                foreach (var llave in cadenaRutaNodos.Split(SeparadorRutaNodo))
+                    nodo = PonleNodo(nodo, llave);
+            }
+
+            treeviewSintacticoChido.Nodes.Add(raiz.FirstNode);
+            treeviewSintacticoChido.ExpandAll();
+        }
+
+        private TreeNode PonleNodo(TreeNode nodo, string llave)
+        {
+            var nombre = llave.Split(SeparadorLlave);
+            if (nodo.Nodes.ContainsKey(llave))
+                return nodo.Nodes[llave];
+            return nodo.Nodes.Add(llave, nombre[0]);
+        }
+
+        private void Lexico()
         {
             GuardarArchivo();
-            if (RutaArchivo.Equals(string.Empty))
+            if (RutaArchivo.Equals(string.Empty) || cuadroEditor.Text == string.Empty)
             {
-                MessageBox.Show(this, MensajeLexico, TituloLexico, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, MensajeArchivoVacio, TituloArchivoVacio, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -373,8 +424,11 @@ namespace Speck
                 var rutaLexico = Path.Combine(Directory.GetCurrentDirectory(), DirectorioLexico, ArchivoLexico);
                 var rutaErrorLexico = Path.Combine(Directory.GetCurrentDirectory(), DirectorioLexico,
                     ArchivoErroresLexico);
-                textboxLexicoChido.Text = File.ReadAllText(rutaLexico);
-                textboxErrorLexico.Text = File.ReadAllText(rutaErrorLexico);
+                if (File.Exists(rutaLexico) && File.Exists(rutaErrorLexico))
+                {
+                    textboxLexicoChido.Text = File.ReadAllText(rutaLexico);
+                    textboxErrorLexico.Text = File.ReadAllText(rutaErrorLexico);
+                }
             }
         }
 
@@ -386,6 +440,54 @@ namespace Speck
         private void botonLexico_Click(object sender, EventArgs e)
         {
             Lexico();
+        }
+
+        public void Sintactico()
+        {
+            treeviewSintacticoChido.Nodes.Clear();
+            Lexico();
+            if (textboxErrorLexico.Text == string.Empty)
+            {
+                var rutaAnalizadorSintactico = Path.Combine(Directory.GetCurrentDirectory(), @"sintactico.py");
+                if (rutaAnalizadorSintactico.Contains(" "))
+                    rutaAnalizadorSintactico = $"\"{rutaAnalizadorSintactico}\"";
+
+                var rutaLexemas = Path.Combine(Directory.GetCurrentDirectory(), DirectorioLexico,
+                    ArchivoLexemasInterno);
+
+                if (File.Exists(rutaLexemas))
+                {
+                    if (rutaLexemas.Contains(" "))
+                        rutaLexemas = $"\"{rutaLexemas}\"";
+
+                    ComandoPython(rutaAnalizadorSintactico + " " + rutaLexemas);
+
+                    var rutaSintactico = Path.Combine(Directory.GetCurrentDirectory(), DirectorioSintactico,
+                        ArchivoSintactico);
+                    var rutaErrorSintactico = Path.Combine(Directory.GetCurrentDirectory(), DirectorioSintactico,
+                        ArchivoErroresSintactico);
+                    if (File.Exists(rutaSintactico) && File.Exists(rutaErrorSintactico))
+                    {
+                        GenerarArbol(rutaSintactico);
+                        textboxErrorSintactico.Text = File.ReadAllText(rutaErrorSintactico);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show(this, MensajeErroresLexicos, TituloErroresLexicos, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void sintácticoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sintactico();
+        }
+
+
+        private void botonSintactico_Click(object sender, EventArgs e)
+        {
+            Sintactico();
         }
 
         private void cuadroEditor_UpdateUI(object sender, UpdateUIEventArgs e)
